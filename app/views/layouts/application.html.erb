@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>univercours</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  </head>
+
+  <body>
+    <%= render "layouts/header" %>
+    <%= yield %>
+    <%= render "layouts/footer" %>
+  </body>
+</html>

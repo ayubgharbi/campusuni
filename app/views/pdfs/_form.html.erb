@@ -1,0 +1,23 @@
+<%= form_for([@deust, @semester, @matiere, @post, @pdf]) do |f| %>
+  <% if @pdf.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pdf.errors.count, "error") %> prohibited this @pdf from being saved:</h2>
+
+      <ul>
+      <% @pdf.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :link %>
+    <%= f.text_field :link %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn button-red" %>
+  </div>
+<% end %>
+

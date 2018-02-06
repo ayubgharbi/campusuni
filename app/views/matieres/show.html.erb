@@ -1,0 +1,118 @@
+  <div id="lab" class="w3ls-section gallery">
+
+<div class="container">
+<h3 style="color: #333333" class="heading-agileinfo text-center"><%= @matiere.name %></h3>
+
+<div class="main_mix_menu text-center">
+                            <ul>
+                                <li class="btn btn-primary filter" data-filter="all" style="border-radius: 0px;">Tous</li>
+                                <li class="btn btn-primary filter" data-filter=".cat1" style="border-radius: 0px;">Cours</li>
+                                <li class="btn btn-primary filter" data-filter=".cat2" style="border-radius: 0px;">Exercices</li>
+                                <li class="btn btn-primary filter" data-filter=".cat3" style="border-radius: 0px;">CCS</li>
+                                <li class="btn btn-primary filter" data-filter=".cat4" style="border-radius: 0px;">TP</li>
+                            </ul>
+                        </div>
+  
+
+                                                   <div id="mixcontent" class="mixcontent">
+
+      <div class="gallery-grids">
+<%= link_to "Nouveau post", new_deust_semester_matiere_post_path(@deust, @semester, @matiere) %>
+
+      <% @matiere.posts.each_slice(3) do |posts| %>
+        <div class="row">
+          
+            <% posts.each do |post| %>
+            <% if post.category.name == "COURS" %>
+              <div class="col-sm-4 col-xs-6 gallery-grid mix cat1">
+                  <%= link_to deust_semester_matiere_post_path(@deust, @semester, @matiere, post) do %>
+
+                <div class="grid effect-apollo"> 
+                  <div class="figcaption">
+                    <p style="font-size: 20px;"><%= post.name %></p>
+                  </div> 
+                </div> 
+                <% post.pdfs.each do |pdf| %>
+                  <iframe src=<%= pdf.link %> width="300" height="300"></iframe>
+                <% end %>
+                <p style="font-size: 20px;"><%= post.name %></p>
+                                <% end %>
+
+              </div>
+            <% end %>
+          <% end %>
+
+          
+            <% posts.each do |post| %>
+            <% if post.category.name == "TDS" %>
+              <div class="col-sm-4 col-xs-6 gallery-grid mix cat2">
+                  <%= link_to deust_semester_matiere_post_path(@deust, @semester, @matiere, post) do %>
+
+                <div class="grid effect-apollo"> 
+                  <div class="figcaption">
+                    <p style="font-size: 20px;"><%= post.name %></p>
+                  </div> 
+                </div> 
+                <% post.pdfs.each do |pdf| %>
+                  <iframe src=<%= pdf.link %> width="300" height="300"></iframe>
+                <% end %>
+                <p style="font-size: 20px;"><%= post.name %></p>
+                <% end %>
+
+              </div>
+            <% end %>
+            <% end %>
+
+          
+            <% posts.each do |post| %>
+            <% if post.category.name == "CCS" %>
+              <div class="col-sm-4 col-xs-6 gallery-grid mix cat3">
+                              <%= link_to deust_semester_matiere_post_path(@deust, @semester, @matiere, post) do %>
+
+                <div class="grid effect-apollo"> 
+                  <div class="figcaption">
+                    <p style="font-size: 20px;"><%= post.name %></p>
+                  </div>  
+                </div> 
+                <p style="font-size: 20px;"><%= post.name %></p>
+                                <% end %>
+
+              </div>
+
+            <% end %>
+          <% end %>
+
+          
+            <% posts.each do |post| %>
+            <% if post.category.name == "TP" %>
+              <div class="col-sm-4 col-xs-6 gallery-grid mix cat1">
+                              <%= link_to deust_semester_matiere_post_path(@deust, @semester, @matiere, post) do %>
+
+                <div class="grid effect-apollo"> 
+                  <div class="figcaption">
+                    <p style="font-size: 20px;"><%= post.name %></p>
+                  </div>  
+                </div> 
+                <p style="font-size: 20px;"><%= post.name %></p>
+                                 <% end %> 
+
+              </div>
+            <% end %>
+          <% end %>
+
+        </div>
+      <% end %>
+
+        <div class="clearfix"> </div> 
+      </div>
+
+      </div>
+
+      <div class="portfolio_btn_area text-center">
+            <%= link_to "Retour", root_path, class: "btn btn-md" %>
+            </div>
+          <div class="gap"></div>
+        </div>
+        </div>
+      <script src="js/lightbox-plus-jquery.min.js"> </script>
+

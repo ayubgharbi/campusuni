@@ -1,0 +1,113 @@
+
+
+<!-- gallery -->
+  <div id="lab" class="w3ls-section gallery">
+    <div class="container">
+      <h3 class="heading-agileinfo text-center"><%= @deust.name %></h3>
+
+          <div class="main_mix_menu text-center">
+                            <ul>
+                                <li class="btn btn-primary filter" data-filter="all" style="border-radius: 0px;">ALL</li>
+                                <li class="btn btn-primary filter" data-filter=".cat1" style="border-radius: 0px;">S1</li>
+                                <li class="btn btn-primary filter" data-filter=".cat2" style="border-radius: 0px;">S2</li>
+                                <li class="btn btn-primary filter" data-filter=".cat3" style="border-radius: 0px;">S3</li>
+                                <li class="btn btn-primary filter" data-filter=".cat4" style="border-radius: 0px;">S4</li>
+                            </ul>
+                        </div>
+
+                                                <div id="mixcontent" class="mixcontent">
+
+   
+      <div class="gallery-grids">
+<%= link_to "Nouveau semestre", new_deust_semester_path(@deust) %>
+<%= link_to "Nouveau module", new_deust_matiere_path(@deust) %>
+
+      <% @deust.semesters.each do |semester| %>
+
+      <% semester.matieres.each_slice(3) do |matieres| %>
+        <div class="row">
+          <% matieres.each do |matiere| %>
+        
+          <% if matiere.semester.name == "s1" %>
+          <div class="col-sm-4 col-xs-6 gallery-grid mix cat1">
+          <%= link_to deust_semester_matiere_path(@deust, semester, matiere) do %>
+            <div class="grid effect-apollo"> 
+              <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
+              <div class="figcaption">
+                <p style="font-size: 20px;"><%= matiere.name %></p>
+              </div> 
+          </div> 
+          <% end %> 
+
+          <p style="font-size: 20px;"><%= matiere.name %></p>
+          </div>
+
+          <% end %>
+
+          <% if matiere.semester.name == "s2" %>
+          <div class="col-sm-4 col-xs-6 gallery-grid mix cat2">
+          <%= link_to deust_semester_matiere_path(@deust, semester, matiere) do %>
+
+            <div class="grid effect-apollo"> 
+              <div class="figcaption">
+                <p style="font-size: 20px;"><%= matiere.name %></p>
+              </div>  
+            </div> 
+          <% end %>
+
+          <p style="font-size: 20px;"><%= matiere.name %></p>
+          </div>
+          <% end %>
+
+          <% if matiere.semester.name == "s3" %>
+          <div class="col-sm-4 col-xs-6 gallery-grid mix cat3">
+            <%= link_to deust_semester_matiere_path(@deust, semester, matiere) do %>
+            <div class="grid effect-apollo"> 
+            
+              <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
+              <div class="figcaption">
+                <p style="font-size: 20px;"><%= matiere.name %></p>
+              </div>  
+            </div> 
+          <% end %>
+
+          <p style="font-size: 20px;"><%= matiere.name %></p>
+          </div>
+
+          <% end %>
+
+           <% if matiere.semester.name == "s4" %>
+          <div class="col-sm-4 col-xs-6 gallery-grid mix cat4">
+            <%= link_to deust_semester_matiere_path(@deust, semester, matiere) do %>
+
+            <div class="grid effect-apollo"> 
+              <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
+              <div class="figcaption">
+                <p style="font-size: 20px;"><%= matiere.name %></p>
+              </div>  
+          </div>
+                      <% end %>
+ 
+          <p style="font-size: 20px;"><%= matiere.name %></p>
+          </div>
+
+          <% end %>
+
+          <% end %>
+
+                  </div>
+
+        <% end %>
+      <% end %>
+
+        <div class="clearfix"> </div> 
+      </div>
+
+      </div>
+      <script src="js/lightbox-plus-jquery.min.js"> </script>
+    </div>
+
+
+  </div>
+  <!-- //gallery -->
+

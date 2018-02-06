@@ -1,0 +1,54 @@
+<div class="container" style="padding-top: 100px;">
+
+	
+
+	<div class="row">
+	<%= link_to "Nouveau pdf", new_deust_semester_matiere_post_pdf_path(@deust, @semester, @matiere, @post) %>
+	<%= link_to "Nouveau image", new_deust_semester_matiere_post_image_path(@deust, @semester, @matiere, @post) %>
+		<div class="col-md-7">
+			<h5 class="heading-agileinfo text-left"><%= @post.matiere.semester.deust.name %>/ <%= @post.matiere.semester.name %> / <%= @post.matiere.name %></h5>
+	      <h3 class="heading-agileinfo text-left"><%= @post.name %></h3>
+
+	      <div class="text-left">
+	      <% @post.pdfs.each do |pdf| %>
+			<iframe src=<%= pdf.link %> width="640" height="480"></iframe>
+		  <% end %>
+	  	  </div>
+
+
+		  <div id="lab" class="w3ls-section gallery">
+		    <div class="container">
+		    	
+
+		          <div class="gap"></div>
+		      	<div class="gallery-grids">
+		      		<% @post.images.each_slice(4) do |images| %>
+		        		<div class="row">
+		          			<% images.each do |image| %>
+		          				<div class="col-sm-3 col-xs-6 gallery-grid mix cat1" style="margin-bottom: 30px;">
+		          						<%= link_to image.image.url, :rel => "prettyPhoto" do %>
+		              					<%= image_tag image.image.url(:large), class: "gallery-image" %>
+		              					<% end %>
+		              					<div class="figcaption">
+		              					</div> 
+		          				</div> 
+		          			<% end %>
+		         		</div>
+		         	<% end %>
+		        	<div class="clearfix"> </div> 
+		      	</div>
+		    </div>
+		  </div>
+
+		</div>
+		<div class="col-md-5">
+
+
+		  	       <div class="portfolio_btn_area text-center">
+		            <%= link_to "Retour", :back, class: "btn btn-md" %>
+		            </div>
+		</div>
+	</div>
+
+  
+</div>
