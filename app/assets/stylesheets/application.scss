@@ -20,6 +20,8 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "arctic_admin/base";
+
 
 $blue: #005FB3;
 $blue1: #0092F6;
@@ -38,7 +40,7 @@ body {
 
 #logo {
     font-family: 'Indie Flower', cursive;;
-    color: #fff;
+    color: black;
     font-size: 25px;
     position: relative;
     bottom: 15px;
@@ -253,7 +255,6 @@ body {
     margin-right: 0;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 300;
-    padding-top: 67px;
 }
 
 .preloader {
@@ -769,14 +770,14 @@ input::-ms-input-placeholder {
     -webkit-transition:all .3s;
     -moz-transition:all .3s;
     transition:all .3s;
-    height: 75px;
+    height: 120px;
         
 }
 
 
 .main_menu_bg{
     margin-top: 0px;
-    background-color: #005FB3   ;
+    background-color: #fff;
 }
 .main_menu_bg .navbar-default {
     background-color: transparent; 
@@ -800,9 +801,8 @@ input::-ms-input-placeholder {
     padding-top: 15px;
     padding-bottom: 20px;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    color: #fff;
-    font-weight: bold;
+    font-size: 0.875rem;
+    color: black;
 }
 .navbar-brand>img {
     max-width: 80%;
@@ -6156,6 +6156,7 @@ nav.small .minilogo {
     color: #FFF;
 }
 .w3l_header_left ul li a{
+    font-family: 'Indie Flower', cursive;
     color:#FFF;
     text-decoration:none;
 }
@@ -6210,7 +6211,7 @@ nav.small .minilogo {
     padding: 0 2em;
 }
 .agileits_top_menu {
-    background: #ff4f81;
+    background: $blue;
     padding: 0.5em 1em;
 }
 

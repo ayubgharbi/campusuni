@@ -14,7 +14,6 @@
 
       <div id="mixcontent" class="mixcontent">
         <div class="gallery-grids">
-          <%= link_to "Nouveau semestre", new_deust_semester_path(deust) %>
           <% deust.semesters.each do |semester| %>
             <% semester.matieres.each_slice(3) do |matieres| %>
               <div class="row">
