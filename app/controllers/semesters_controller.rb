@@ -15,7 +15,7 @@ class SemestersController < ApplicationController
 
     respond_to do |format|
       if @semester.save
-        format.html { redirect_to root_path }
+        format.html { redirect_to @deust }
         format.json { render :show, status: :created, location: @semester }
       else
         format.html { render :new }
@@ -27,7 +27,7 @@ class SemestersController < ApplicationController
   def update
     respond_to do |format|
       if @semester.update(semester_params)
-        format.html { redirect_to root_path }
+        format.html { redirect_to @deust }
         format.json { render :show, status: :ok, location: @semester }
       else
         format.html { render :edit }
@@ -39,7 +39,7 @@ class SemestersController < ApplicationController
   def destroy
     @semester.destroy
     respond_to do |format|
-      format.html { redirect_to root_path }
+      format.html { redirect_to @deust }
       format.json { head :no_content }
     end
   end
@@ -51,7 +51,6 @@ class SemestersController < ApplicationController
     end
 
     def set_deust
-      @deust = Deust.find(params[:deust_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

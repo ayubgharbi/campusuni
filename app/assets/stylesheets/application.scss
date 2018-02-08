@@ -248,7 +248,6 @@ html,
 body {
     background-color: #fff;
     font-size: 1rem;
-    color: #797979;
     width: 100%;
     padding: 0;
     margin-left: 0;
@@ -798,6 +797,7 @@ input::-ms-input-placeholder {
 }
 
 .main_menu_bg .navbar-nav>li>a {
+    font-weight: bold;
     padding-top: 15px;
     padding-bottom: 20px;
     text-transform: uppercase;
@@ -863,7 +863,7 @@ input::-ms-input-placeholder {
 
 /*home section*/
 .home{
-    background: url(original.jpg) no-repeat 100% 100%;
+    background: url(original2.jpg) no-repeat 100% 100%;
     background-size: cover;
 }
 

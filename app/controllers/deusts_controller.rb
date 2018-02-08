@@ -1,5 +1,6 @@
 class DeustsController < ApplicationController
   before_action :set_deust, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authorize, only: [:index, :show]
 
   def index
     @deusts = Deust.all

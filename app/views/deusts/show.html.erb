@@ -1,9 +1,10 @@
+<div class="container" style="padding-top: 60px;">
 
 
 <!-- gallery -->
   <div id="lab" class="w3ls-section gallery">
     <div class="container">
-      <h3 class="heading-agileinfo text-center"><%= @deust.name %></h3>
+      <h3 class="heading-agileinfo text-center"><%= @deust.name %></h4>
 
           <div class="main_mix_menu text-center">
                             <ul>
@@ -19,7 +20,10 @@
 
    
       <div class="gallery-grids">
-
+      <% if session[:user_id] %>
+          <%= link_to "Nouveau semestre", new_deust_semester_path(@deust) %>
+          <%= link_to "Nouveau module", new_deust_matiere_path(@deust) %>
+      <% end %>
       <% @deust.semesters.each do |semester| %>
 
       <% semester.matieres.each_slice(3) do |matieres| %>
@@ -47,6 +51,7 @@
           <%= link_to deust_semester_matiere_path(@deust, semester, matiere) do %>
 
             <div class="grid effect-apollo"> 
+              <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
               <div class="figcaption">
                 <p style="font-size: 20px;"><%= matiere.name %></p>
               </div>  
@@ -102,10 +107,10 @@
       </div>
 
       </div>
-      <script src="js/lightbox-plus-jquery.min.js"> </script>
     </div>
 
 
   </div>
   <!-- //gallery -->
 
+</div>

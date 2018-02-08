@@ -1,4 +1,6 @@
 class Matiere < ApplicationRecord
+
+  	
 	belongs_to :semester
 	belongs_to :deust
 	has_many :posts 

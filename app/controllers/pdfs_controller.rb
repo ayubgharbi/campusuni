@@ -4,6 +4,7 @@ class PdfsController < ApplicationController
   before_action :set_matiere
   before_action :set_post
   before_action :set_pdf, only: [:edit, :update, :destroy]
+  skip_before_action :authorize
 
 
   def new

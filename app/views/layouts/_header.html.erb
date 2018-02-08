@@ -55,6 +55,9 @@
                                                     <%= link_to deust.name, deust_path(deust), class: "link" %>
                                                 </li>
                                             <% end %>
+                                             <% if session[:user_id] %>
+                                                <li><%= link_to 'logout',   logout_path, method: :delete %></li>
+                                            <% end %>
                                             <li>
                                                 <a href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                     <span class="glyphicon glyphicon-search"></span></a>
@@ -136,6 +139,10 @@
                                                     <%= link_to deust.name, deust_path(deust), class: "link" %>
                                                 </li>
                                             <% end %>
+                                            <% if session[:user_id] %>
+                                                <li><%= link_to 'logout',   logout_path, method: :delete %></li>
+                                            <% end %>
+
                                             <li><a href="#counter">compteur</a></li>
                                         </ul>
 

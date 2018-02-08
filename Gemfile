@@ -23,6 +23,8 @@ gem 'prettyphoto-rails'
 gem 'activeadmin', git: 'git://github.com/gregbell/active_admin.git'
 gem 'devise', '~> 4.1', '>= 4.1.1'
 gem 'arctic_admin', github: 'cle61/arctic_admin', branch: '2-0-alpha'
+gem 'bcrypt', '~> 3.1.7'
+gem 'friendly_id', '~> 5.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

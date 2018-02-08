@@ -4,6 +4,7 @@ class ImagesController < ApplicationController
   before_action :set_matiere
   before_action :set_post
   before_action :set_image, only: [:edit, :update, :destroy]
+  skip_before_action :authorize
 
 
   def new
