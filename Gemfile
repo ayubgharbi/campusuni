@@ -25,7 +25,6 @@ gem 'devise', '~> 4.1', '>= 4.1.1'
 gem 'arctic_admin', github: 'cle61/arctic_admin', branch: '2-0-alpha'
 gem 'bcrypt', '~> 3.1.7'
 gem 'friendly_id', '~> 5.1'
-gem 'pg', '~> 1.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -40,7 +39,7 @@ end
 
 group :production do
   gem 'unicorn'
-  gem 'pg', '~> 1.0'
+  gem 'pg', '~> 0.20'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
