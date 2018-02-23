@@ -2,8 +2,8 @@ default: &default
   adapter: sqlite3
   pool: 5
   host: localhost
-  username: pguser
-  password: 
+  username: univercours
+  password: univercours
   timeout: 5000
 
 development:
@@ -20,5 +20,5 @@ production:
   encoding: unicode
   database: universcours_production
   pool: 5
-  username: pguser
-  password: 
+  username: univercours
+  password: univercours
