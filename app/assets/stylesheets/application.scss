@@ -797,7 +797,6 @@ input::-ms-input-placeholder {
 }
 
 .main_menu_bg .navbar-nav>li>a {
-    font-weight: bold;
     padding-top: 15px;
     padding-bottom: 20px;
     text-transform: uppercase;
@@ -863,7 +862,7 @@ input::-ms-input-placeholder {
 
 /*home section*/
 .home{
-    background: url(original2.jpg) no-repeat 100% 100%;
+    background: url(original1.jpg) no-repeat 100% 100%;
     background-size: cover;
 }
 
@@ -1369,7 +1368,7 @@ blockquote footer, blockquote small, blockquote .small {
 }
 .copyright_text p{
     font-family: 'Indie Flower', cursive;
-    color:#aaa79e;
+    color: black;
     font-size:0.8125rem;
     line-height: 25px;
     padding:40px;
@@ -1391,7 +1390,7 @@ blockquote footer, blockquote small, blockquote .small {
 }
 .footer_socail a i{
     font-size:0.8125rem;
-    color:#aaa79e;
+    color: black;
     padding: 0px 10px;
 }
 
