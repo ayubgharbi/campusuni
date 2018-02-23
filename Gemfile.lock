@@ -285,7 +285,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   paperclip (~> 5.1)
-  pg
+  pg (~> 1.0)
   prettyphoto-rails
   puma (~> 3.0)
   rails (~> 5.0.6)
