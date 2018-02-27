@@ -45,3 +45,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'unicorn'
+gem 'bundler', '~> 1.14', '>= 1.14.6'
