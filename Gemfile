@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+ruby '2.4.0'
+
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -44,4 +46,4 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'unicorn', '~> 5.3', '>= 5.3.1'
+gem 'unicorn'
