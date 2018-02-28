@@ -82,7 +82,7 @@ body {
 
 .jumbotron {
 	height: 500px;
-	background: linear-gradient(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.43)), url(50995493_xxl.jpg) no-repeat center center;
+	background: linear-gradient(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.43)), image-url("50995493_xxl.jpg") no-repeat center center;
 }
 
 
@@ -275,7 +275,7 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    background-image: url(loading.gif);
+    background-image: image-url("loading.gif");
     background-repeat: no-repeat;
     background-position: center;
     -moz-background-size: cover;
@@ -551,13 +551,13 @@ Separator
     height: 10px;
     width: 127px;
     margin: 20px auto;
-    background: url(separator.png) no-repeat;
+    background: image-url("separator.png") no-repeat;
 }
 .whiseparator {
     height: 10px;
     width: 127px;
     margin: 20px auto;
-    background: url(whiseparator.png) no-repeat;
+    background: image-url("whiseparator.png") no-repeat;
 }
 .separator2 {
     height: 2px;
@@ -791,7 +791,7 @@ input::-ms-input-placeholder {
 
 .main_menu_bg .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
     color: #5e9a28;
-    background: url(selectmenu.png) no-repeat bottom center;
+    background: image-url("selectmenu.png") no-repeat bottom center;
     padding-bottom: 20px;
 
 }
@@ -862,7 +862,7 @@ input::-ms-input-placeholder {
 
 /*home section*/
 .home{
-    background: url(original1.jpg) no-repeat 100% 100%;
+    background: image-url("original1.jpg") no-repeat 100% 100%;
     background-size: cover;
 }
 
@@ -940,7 +940,7 @@ input::-ms-input-placeholder {
 }
 
 .service_border_raund{
-    background: url(zigzag.png) repeat-x;
+    background: image-url("zigzag.png") repeat-x;
     position: absolute;
     left: 0;
     top: -10px;
@@ -1254,7 +1254,7 @@ blockquote footer, blockquote small, blockquote .small {
 .counter .main_counter{}
 .counter .main_counter{}
 .single_left_counter_bg{
-    background: url(cleftbg3.png) no-repeat 100% 100%;
+    background: image-url("cleftbg3.png") no-repeat 100% 100%;
     display: inline-block;
     max-width: 500px;
     float: left;
@@ -2160,7 +2160,7 @@ Author URI: http://themeforest.net/user/XpeedStudio/portfolio
   top: 50%;
   margin-left: -40px;
   margin-top: -40px;
-  background: url("owl.video.play.png") no-repeat;
+  background: image-url("owl.video.play.png") no-repeat;
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;
@@ -5669,7 +5669,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	-webkit-animation: AnimationB 4s infinite ease-in-out;
 	-moz-animation: AnimationB 4s infinite ease-in-out;
 	animation: AnimationB 4s infinite ease-in-out;
-	background-image: url('animated-overlay.gif');
+	background-image: image-url('animated-overlay.gif');
 }
 .sonny_progressbar .bar-container.border .bar, .sonny_progressbar .bar-container.border .targetBar, .sonny_progressbar .bar-container.border .backgroundBar {
 	border-bottom: 3px solid rgba(0,0,0,.2);
