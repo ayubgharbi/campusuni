@@ -1,6 +1,5 @@
 class Semester < ApplicationRecord
-
-	belongs_to :deusts
+	belongs_to :deust
 	has_many :matieres
 	has_many :posts
 	has_many :images
