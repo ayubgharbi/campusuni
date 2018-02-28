@@ -16,7 +16,6 @@ controller :sessions do
   resources :users
     
   resources :deusts do 
-    resources :matieres
   	resources :semesters do 
   		resources :matieres do 
   			resources :posts do 
