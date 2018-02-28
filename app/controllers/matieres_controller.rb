@@ -21,6 +21,7 @@ class MatieresController < ApplicationController
   def create
     @matiere = Matiere.new(matiere_params)
     @matiere.deust_id = @deust.id
+    @matiere.semester_id = @semester.id
 
     respond_to do |format|
       if @matiere.save
@@ -71,6 +72,6 @@ class MatieresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def matiere_params
-      params.require(:matiere).permit(:name, :image, :semester_id)
+      params.require(:matiere).permit(:name, :image)
     end
 end

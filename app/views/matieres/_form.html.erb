@@ -12,11 +12,6 @@
   <% end %> 
 
   <div class="field">
-        <%= f.label :semester_id %>
-        <%= f.collection_select :semester_id, @deust.semesters.all, :id, :name, {prompt: "semester" } %>
-  </div>
-
-  <div class="field">
   	<%= f.label :name %>
     <%= f.text_field :name %>
   </div>
