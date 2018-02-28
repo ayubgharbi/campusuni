@@ -1,6 +1,7 @@
 class SemestersController < ApplicationController
-  before_action :set_semester, only: [:edit, :update, :destroy]
   before_action :set_deust
+  before_action :set_semester, only: [:edit, :update, :destroy]
+  
 
   def new
     @semester = Semester.new
@@ -51,6 +52,7 @@ class SemestersController < ApplicationController
     end
 
     def set_deust
+      @deust = Deust.find(params[:deust_id]) 
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
