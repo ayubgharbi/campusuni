@@ -1,6 +1,5 @@
 class MatieresController < ApplicationController
   before_action :set_deust
-  before_action :set_semester
   before_action :set_matiere, only: [:show, :edit, :update, :destroy]
   skip_before_action :authorize, only: [:show]
 
@@ -21,7 +20,6 @@ class MatieresController < ApplicationController
   def create
     @matiere = Matiere.new(matiere_params)
     @matiere.deust_id = @deust.id
-    @matiere.semester_id = @semester.id
 
     respond_to do |format|
       if @matiere.save
@@ -64,14 +62,8 @@ class MatieresController < ApplicationController
       @deust = Deust.find(params[:deust_id]) 
     end
 
-    def set_semester
-      @semester = Semester.find(params[:semester_id]) if params[:semester_id]
-    end
-
-
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def matiere_params
-      params.require(:matiere).permit(:name, :image)
+      params.require(:matiere).permit(:name, :image, :semester_id)
     end
 end
