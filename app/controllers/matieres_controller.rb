@@ -23,7 +23,7 @@ class MatieresController < ApplicationController
 
     respond_to do |format|
       if @matiere.save
-        format.html { redirect_to @deust }
+        format.html { redirect_to root_path }
         format.json { render :show, status: :created, location: @matiere }
       else
         format.html { render :new }
@@ -35,7 +35,7 @@ class MatieresController < ApplicationController
   def update
     respond_to do |format|
       if @matiere.update(matiere_params)
-        format.html { redirect_to @deust }
+        format.html { redirect_to root_path }
         format.json { render :show, status: :ok, location: @matiere }
       else
         format.html { render :edit }
@@ -47,7 +47,7 @@ class MatieresController < ApplicationController
   def destroy
     @matiere.destroy
     respond_to do |format|
-      format.html { redirect_to @deust }
+      format.html { redirect_to root_path }
       format.json { head :no_content }
     end
   end
