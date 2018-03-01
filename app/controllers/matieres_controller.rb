@@ -62,6 +62,12 @@ class MatieresController < ApplicationController
       @deust = Deust.find(params[:deust_id]) 
     end
 
+    def set_semester
+      @semester = Semester.find(params[:semester_id]) if params[:semester_id]
+    end
+
+
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def matiere_params
       params.require(:matiere).permit(:name, :image, :semester_id)

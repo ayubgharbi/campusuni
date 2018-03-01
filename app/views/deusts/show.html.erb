@@ -31,7 +31,7 @@
         
           <% if matiere.semester.name == "s1" %>
           <div class="col-sm-4 col-xs-6 gallery-grid mix cat1">
-          <%= link_to deust_semester_matiere_path(@deust, semester, matiere) do %>
+          <%= link_to deust_matiere_path(@deust, matiere) do %>
             <div class="grid effect-apollo"> 
               <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
               <div class="figcaption">
@@ -47,7 +47,7 @@
 
           <% if matiere.semester.name == "s2" %>
           <div class="col-sm-4 col-xs-6 gallery-grid mix cat2">
-          <%= link_to deust_semester_matiere_path(@deust, semester, matiere) do %>
+          <%= link_to deust_matiere_path(@deust, matiere) do %>
 
             <div class="grid effect-apollo"> 
               <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
@@ -63,7 +63,7 @@
 
           <% if matiere.semester.name == "s3" %>
           <div class="col-sm-4 col-xs-6 gallery-grid mix cat3">
-            <%= link_to deust_semester_matiere_path(@deust, semester, matiere) do %>
+            <%= link_to deust_matiere_path(@deust, matiere) do %>
             <div class="grid effect-apollo"> 
             
               <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
@@ -80,7 +80,7 @@
 
            <% if matiere.semester.name == "s4" %>
           <div class="col-sm-4 col-xs-6 gallery-grid mix cat4">
-            <%= link_to deust_semester_matiere_path(@deust, semester, matiere) do %>
+            <%= link_to deust_matiere_path(@deust, matiere) do %>
 
             <div class="grid effect-apollo"> 
               <%= image_tag matiere.image.url(:large), class: "gallery-image" %>

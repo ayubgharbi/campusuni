@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :set_deust
-  before_action :set_semester
   before_action :set_matiere
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   skip_before_action :authorize, only: [:show]
@@ -18,12 +17,11 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.deust_id = @deust.id
-    @post.semester_id = @semester.id
     @post.matiere_id = @matiere.id
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @deust}
+        format.html { redirect_to @matiere}
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -35,7 +33,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @deust}
+        format.html { redirect_to @matiere}
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -47,7 +45,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to @deust }
+      format.html { redirect_to @matiere }
       format.json { head :no_content }
     end
   end
@@ -65,10 +63,6 @@ class PostsController < ApplicationController
 
     def set_deust
       @deust = Deust.find(params[:deust_id]) 
-    end
-
-    def set_semester
-      @semester = Semester.find(params[:semester_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

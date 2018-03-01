@@ -16,16 +16,15 @@ controller :sessions do
   resources :users
     
   resources :deusts do 
-    resources :matieres
-  	resources :semesters do 
-  		resources :matieres do 
-  			resources :posts do 
-  				resources :images 
-          resources :pdfs
-  			end
+    resources :semesters
+  	resources :matieres do 
+  		resources :posts do 
+  		  resources :images 
+        resources :pdfs
   		end
   	end
   end 
+
 end
 
 

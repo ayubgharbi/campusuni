@@ -5,7 +5,7 @@
 	<div class="row">
 	
 		<div class="col-md-7">
-			<h5 class="heading-agileinfo text-left"><%= @post.deust.name %> / <%= @post.semester.name %> / <%= @post.matiere.name %></h5>
+			<h5 class="heading-agileinfo text-left"><%= @post.deust.name %> / <%= @post.matiere.semester.name %> / <%= @post.matiere.name %></h5>
 	      <h3 class="heading-agileinfo text-left"><%= @post.name %></h3>
 
 	      <div class="text-left">
@@ -44,8 +44,8 @@
 		  	       <div class="portfolio_btn_area text-center">
 			            <%= link_to "Retour", :back, class: "btn btn-md" %>
 			            <% if session[:user_id] %>
-							<%= link_to "Nouveau pdf", new_deust_semester_matiere_post_pdf_path(@deust, @semester, @matiere, @post), class: "btn btn-md" %>
-							<%= link_to "Nouveau image", new_deust_semester_matiere_post_image_path(@deust, @semester, @matiere, @post), class: "btn btn-md" %>
+							<%= link_to "Nouveau pdf", new_deust_matiere_post_pdf_path(@deust, @matiere, @post), class: "btn btn-md" %>
+							<%= link_to "Nouveau image", new_deust_matiere_post_image_path(@deust, @matiere, @post), class: "btn btn-md" %>
 						<% end %>
 		            </div>
 		</div>

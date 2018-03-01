@@ -1,6 +1,5 @@
 class Pdf < ApplicationRecord
-	belongs_to :deust
-	belongs_to :semester 
-	belongs_to :matiere
-	belongs_to :post
+	belongs_to :deust, dependent: :destroy
+	belongs_to :matiere, dependent: :destroy
+	belongs_to :post, dependent: :destroy
 end

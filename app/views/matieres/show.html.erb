@@ -20,7 +20,7 @@
 
       <div class="gallery-grids">
       <% if session[:user_id] %>
-        <%= link_to "Nouveau post", new_deust_semester_matiere_post_path(@deust, @semester, @matiere) %>
+        <%= link_to "Nouveau post", new_deust_matiere_post_path(@deust, @matiere) %>
       <% end %>
 
       <% @matiere.posts.each_slice(3) do |posts| %>
@@ -29,19 +29,16 @@
             <% posts.each do |post| %>
             <% if post.category.name == "Cours" %>
               <div class="col-sm-4 col-xs-6 gallery-grid mix cat1">
-                  <%= link_to deust_semester_matiere_post_path(@deust, @semester, @matiere, post) do %>
+                  <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
 
                 <div class="grid effect-apollo"> 
                   <div class="figcaption">
                     <p style="font-size: 20px;"><%= post.name %></p>
                   </div> 
                 </div> 
-                <% post.pdfs.each do |pdf| %>
-                  <iframe src=<%= pdf.link %> width="300" height="300"></iframe>
-                <% end %>
+                  <iframe src=<%= post.pdfs.first.link %> width="300" height="300"></iframe>
                 <p style="font-size: 20px;"><%= post.name %></p>
-                                <% end %>
-
+              <% end %>
               </div>
             <% end %>
           <% end %>
@@ -50,16 +47,14 @@
             <% posts.each do |post| %>
             <% if post.category.name == "TDS" %>
               <div class="col-sm-4 col-xs-6 gallery-grid mix cat2">
-                  <%= link_to deust_semester_matiere_post_path(@deust, @semester, @matiere, post) do %>
+                  <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
 
                 <div class="grid effect-apollo"> 
                   <div class="figcaption">
                     <p style="font-size: 20px;"><%= post.name %></p>
                   </div> 
                 </div> 
-                <% post.pdfs.each do |pdf| %>
-                  <iframe src=<%= pdf.link %> width="300" height="300"></iframe>
-                <% end %>
+                <iframe src=<%= post.pdfs.first.link %> width="300" height="300"></iframe>
                 <p style="font-size: 20px;"><%= post.name %></p>
                 <% end %>
 
@@ -71,7 +66,7 @@
             <% posts.each do |post| %>
             <% if post.category.name == "CCS" %>
               <div class="col-sm-4 col-xs-6 gallery-grid mix cat3">
-                              <%= link_to deust_semester_matiere_post_path(@deust, @semester, @matiere, post) do %>
+                              <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
 
                 <div class="grid effect-apollo"> 
                   <div class="figcaption">
@@ -79,10 +74,8 @@
                   </div>  
                 </div> 
                 <p style="font-size: 20px;"><%= post.name %></p>
-                                <% end %>
-
+              <% end %>
               </div>
-
             <% end %>
           <% end %>
 
@@ -90,7 +83,7 @@
             <% posts.each do |post| %>
             <% if post.category.name == "TP" %>
               <div class="col-sm-4 col-xs-6 gallery-grid mix cat1">
-                              <%= link_to deust_semester_matiere_post_path(@deust, @semester, @matiere, post) do %>
+                              <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
 
                 <div class="grid effect-apollo"> 
                   <div class="figcaption">

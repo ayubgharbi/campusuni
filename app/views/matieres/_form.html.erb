@@ -1,4 +1,4 @@
-<%= form_for([@deust, @semester, @matiere]) do |f| %>
+<%= form_for([@deust, @matiere]) do |f| %>
   <% if @matiere.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@matiere.errors.count, "error") %> prohibited this @matiere from being saved:</h2>

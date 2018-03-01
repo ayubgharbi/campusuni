@@ -1,6 +1,5 @@
 class ImagesController < ApplicationController
   before_action :set_deust
-  before_action :set_semester
   before_action :set_matiere
   before_action :set_post
   before_action :set_image, only: [:edit, :update, :destroy]
@@ -17,7 +16,6 @@ class ImagesController < ApplicationController
   def create
     @image = Image.new(image_params)
     @image.deust_id = @deust.id
-    @image.semester_id = @semester.id
     @image.matiere_id = @matiere.id
     @image.post_id = @post.id
 
@@ -64,10 +62,6 @@ class ImagesController < ApplicationController
 
     def set_deust
       @deust = Deust.find(params[:deust_id]) 
-    end
-
-    def set_semester
-      @semester = Semester.find(params[:semester_id])
     end
 
     def set_image

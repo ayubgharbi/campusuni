@@ -1,6 +1,5 @@
 class PdfsController < ApplicationController
   before_action :set_deust
-  before_action :set_semester
   before_action :set_matiere
   before_action :set_post
   before_action :set_pdf, only: [:edit, :update, :destroy]
@@ -17,7 +16,6 @@ class PdfsController < ApplicationController
   def create
     @pdf = Pdf.new(image_params)
     @pdf.deust_id = @deust.id
-    @pdf.semester_id = @semester.id
     @pdf.matiere_id = @matiere.id
     @pdf.post_id = @post.id
 
@@ -64,10 +62,6 @@ class PdfsController < ApplicationController
 
     def set_deust
       @deust = Deust.find(params[:deust_id]) 
-    end
-
-    def set_semester
-      @semester = Semester.find(params[:semester_id])
     end
 
     def set_pdf

@@ -1,6 +1,6 @@
 class Matiere < ApplicationRecord
 	belongs_to :semester
-	belongs_to :deust
+	belongs_to :deust, dependent: :destroy
 	has_many :posts 
 	has_many :images
 	has_many :pdfs
