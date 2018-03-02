@@ -43,7 +43,32 @@
         </section>
 
 
-
+<section id="post" class="post">
+    <div class="container">
+    <h5 style="color: black; margin-top: 30px;">Derniers publications</h5>
+        <% @posts.each_slice(3) do |posts| %>
+            <div class="row">
+                <% posts.each do |post| %>
+                    <% if post.category.name == "Cours" %>
+                        <div class="col-sm-3 col-xs-6 gallery-grid mix cat1">
+                            <%= link_to post do %>
+                                <div class="grid effect-apollo"> 
+                                  <div class="figcaption">
+                                    <p style="font-size: 20px;"><%= post.name %></p>
+                                  </div> 
+                                </div> 
+                                <% if post.pdfs.presence %>
+                                  <iframe src=<%= post.pdfs.first.link %> width="200" height="200"></iframe>
+                                <% end %>
+                                <p style="font-size: 20px;"><%= post.name %></p>
+                            <% end %>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+</section>
 
         <section id="counter" class="counter">
             <div class="container-fluid">
@@ -62,14 +87,14 @@
                                     <div class="col-sm-4 ">
                                         <div class="single_counter_right">
                                             <i class="fa fa-comments-o"></i>
-                                            <h2 class="statistic-counter">3</h2>
+                                            <h2 class="statistic-counter">1</h2>
                                             <p>FILIERE</p>
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
                                         <div class="single_counter_right">
                                             <i class="fa fa-life-ring"></i>
-                                            <h2 class="statistic-counter">72</h2>
+                                            <h2 class="statistic-counter">24</h2>
                                             <p>MODULES</p>
                                         </div>
                                     </div>
