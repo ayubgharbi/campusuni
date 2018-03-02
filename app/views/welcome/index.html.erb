@@ -50,13 +50,8 @@
             <div class="row">
                 <% posts.each do |post| %>
                     <% if post.category.name == "Cours" %>
-                        <div class="col-sm-3 col-xs-6 gallery-grid mix cat1">
+                        <div class="col-md-4">
                             <%= link_to post do %>
-                                <div class="grid effect-apollo"> 
-                                  <div class="figcaption">
-                                    <p style="font-size: 20px;"><%= post.name %></p>
-                                  </div> 
-                                </div> 
                                 <% if post.pdfs.presence %>
                                   <iframe src=<%= post.pdfs.first.link %> width="200" height="200"></iframe>
                                 <% end %>
