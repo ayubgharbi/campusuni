@@ -51,12 +51,10 @@
                 <% posts.each do |post| %>
                     <% if post.category.name == "Cours" %>
                         <div class="col-md-4">
-                            <%= link_to post do %>
                                 <% if post.pdfs.presence %>
                                   <iframe src=<%= post.pdfs.first.link %> width="200" height="200"></iframe>
                                 <% end %>
                                 <p style="font-size: 20px;"><%= post.name %></p>
-                            <% end %>
                         </div>
                     <% end %>
                 <% end %>
