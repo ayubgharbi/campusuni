@@ -62,7 +62,7 @@ class PostsController < ApplicationController
     end
 
     def set_deust
-      @deust = Deust.find(params[:deust_id]) 
+      @deust = Deust.find(params[:deust_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

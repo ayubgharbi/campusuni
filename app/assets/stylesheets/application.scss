@@ -39,7 +39,7 @@ body {
 
 
 #logo {
-    font-family: 'Indie Flower', cursive;;
+    font-family: 'Indie Flower', cursive;
     color: black;
     font-size: 25px;
     position: relative;
@@ -800,8 +800,14 @@ input::-ms-input-placeholder {
     padding-top: 15px;
     padding-bottom: 20px;
     text-transform: uppercase;
-    font-size: 0.875rem;
+    font-size: 0.975rem;
     color: black;
+    font-weight: bold;
+    font-family: 'Indie Flower', cursive;
+    &:hover {
+        position: relative;
+        bottom: 2px;
+    }
 }
 .navbar-brand>img {
     max-width: 80%;
@@ -1368,7 +1374,7 @@ blockquote footer, blockquote small, blockquote .small {
 }
 .copyright_text p{
     font-family: 'Indie Flower', cursive;
-    color: black;
+    color: #223d61;
     font-size:0.8125rem;
     line-height: 25px;
     padding:40px;
@@ -1390,7 +1396,7 @@ blockquote footer, blockquote small, blockquote .small {
 }
 .footer_socail a i{
     font-size:0.8125rem;
-    color: black;
+    color: #223d61;
     padding: 0px 10px;
 }
 

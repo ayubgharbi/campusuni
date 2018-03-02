@@ -37,7 +37,7 @@
                   </div> 
                 </div> 
                   <% if post.pdfs.presence %>
-                    <iframe src=<%= post.pdfs.first.link %> width="300" height="300"></iframe>
+                    <iframe src=<%= post.pdfs.first.link %> width="200" height="200"></iframe>
                   <% end %>
                 <p style="font-size: 20px;"><%= post.name %></p>
               <% end %>
@@ -57,7 +57,7 @@
                   </div> 
                 </div> 
                 <% if post.pdfs.presence %>
-                    <iframe src=<%= post.pdfs.first.link %> width="300" height="300"></iframe>
+                    <iframe src=<%= post.pdfs.first.link %> width="200" height="200"></iframe>
                   <% end %>
                 <p style="font-size: 20px;"><%= post.name %></p>
                 <% end %>
@@ -83,7 +83,7 @@
             <% end %>
           <% end %>
 
-          
+          200
             <% posts.each do |post| %>
             <% if post.category.name == "TP" %>
               <div class="col-sm-4 col-xs-6 gallery-grid mix cat1">
