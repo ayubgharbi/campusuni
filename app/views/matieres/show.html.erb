@@ -36,7 +36,9 @@
                     <p style="font-size: 20px;"><%= post.name %></p>
                   </div> 
                 </div> 
-                  <iframe src=<%= post.pdfs.first.link %> width="300" height="300"></iframe>
+                  <% if post.pdfs.presence %>
+                    <iframe src=<%= post.pdfs.first.link %> width="300" height="300"></iframe>
+                  <% end %>
                 <p style="font-size: 20px;"><%= post.name %></p>
               <% end %>
               </div>
@@ -54,7 +56,9 @@
                     <p style="font-size: 20px;"><%= post.name %></p>
                   </div> 
                 </div> 
-                <iframe src=<%= post.pdfs.first.link %> width="300" height="300"></iframe>
+                <% if post.pdfs.presence %>
+                    <iframe src=<%= post.pdfs.first.link %> width="300" height="300"></iframe>
+                  <% end %>
                 <p style="font-size: 20px;"><%= post.name %></p>
                 <% end %>
 
