@@ -45,11 +45,14 @@
 
 
 <section id="post" class="post">
+
     <div class="container">
+                <h5 style="color: #005FB3; margin-top: 30px; margin-bottom: 20px">Derniers publications</h5>
+
+        <% @posts.each_slice(3) do |posts| %>
         <div class="row">
-            <h5 style="color: #005FB3; margin-top: 30px; margin-bottom: 20px">Derniers publications</h5>
-            <% @posts.each do |post| %>
-                <div class="col-md-4 col-sm-6 col-xs-12" style="padding: 0px 50px 0px 50px;">
+            <% posts.each do |post| %>
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <% if post.pdfs.presence %>
                         <iframe src=<%= post.pdfs.first.link %> width="240" height="240"></iframe>
                     <% else %>
@@ -57,12 +60,14 @@
                           <%= image_tag post.images.first.image.url(:thumb), class: "post_image" %>
                         <% end %>
                     <% end %>
-                    <p style="font-size: 20px; margin-top: 10px; color: black"><%= post.name %></p>
+                    <p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px; color: black"><%= post.name %></p>
                 </div>
             <% end %>
-        </div>     
+        </div>   
+        <% end %>  
     </div>
 </section>
+
 
         <section id="counter" class="counter">
             <div class="container-fluid">
