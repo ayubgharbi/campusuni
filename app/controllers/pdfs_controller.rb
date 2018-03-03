@@ -21,7 +21,7 @@ class PdfsController < ApplicationController
 
     respond_to do |format|
       if @pdf.save
-        format.html { redirect_to root_path }
+        format.html { redirect_to deust_matiere_post_path(@deust, @matiere, @post) }
         format.json { render :show, status: :created, location: @pdf }
       else
         format.html { render :new }
@@ -33,7 +33,7 @@ class PdfsController < ApplicationController
   def update
     respond_to do |format|
       if @pdf.update(image_params)
-        format.html { redirect_to root_path }
+        format.html { redirect_to deust_matiere_post_path(@deust, @matiere, @post) }
         format.json { render :show, status: :ok, location: @pdf }
       else
         format.html { render :edit }
@@ -45,7 +45,7 @@ class PdfsController < ApplicationController
   def destroy
     @pdf.destroy
     respond_to do |format|
-      format.html { redirect_to root_path }
+      format.html { redirect_to deust_matiere_post_path(@deust, @matiere, @post) }
       format.json { head :no_content }
     end
   end

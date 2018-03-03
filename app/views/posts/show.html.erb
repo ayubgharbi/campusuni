@@ -45,7 +45,7 @@
 		</div>
 		<div class="col-md-5">
 		  	       <div class="portfolio_btn_area text-center">
-			            <%= link_to "Retour", :back, class: "btn btn-md" %>
+			            <%= link_to "Retour", deust_matiere_path(@deust, @matiere), class: "btn btn-md" %>
 			            <% if session[:user_id] %>
 							<%= link_to "Nouveau pdf", new_deust_matiere_post_pdf_path(@deust, @matiere, @post), class: "btn btn-md" %>
 							<%= link_to "Nouveau image", new_deust_matiere_post_image_path(@deust, @matiere, @post), class: "btn btn-md" %>

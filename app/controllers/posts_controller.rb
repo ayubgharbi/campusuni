@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @matiere}
+        format.html { redirect_to deust_matiere_path(@deust, @matiere) }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @matiere}
+        format.html { redirect_to deust_matiere_path(@deust, @matiere) }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -45,7 +45,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to @matiere }
+      format.html { redirect_to deust_matiere_path(@deust, @matiere) }
       format.json { head :no_content }
     end
   end

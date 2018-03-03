@@ -800,9 +800,8 @@ input::-ms-input-placeholder {
     padding-top: 15px;
     padding-bottom: 20px;
     text-transform: uppercase;
-    font-size: 0.975rem;
+    font-size: 1.275rem;
     color: black;
-    font-weight: bold;
     font-family: 'Indie Flower', cursive;
     &:hover {
         position: relative;
@@ -6222,4 +6221,9 @@ nav.small .minilogo {
 
 .gallery-image {
     height: 220px;
+}
+
+.post_image {
+    width: 240px;
+    height: 240px;
 }
