@@ -10,4 +10,8 @@ class Matiere < ApplicationRecord
     	:url => "/system/:matiere/:id/:style/:filename"
   	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   	validates_attachment_size :image, :less_than => 5.megabytes
+
+  	def to_param
+    	"#{id} #{name}".parameterize
+  	end
 end
