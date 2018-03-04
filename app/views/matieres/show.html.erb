@@ -26,6 +26,7 @@
         <%= link_to "Nouveau post", new_deust_matiere_post_path(@deust, @matiere) %>
       <% end %>
 
+
         <div class="row">
           
             <% @matiere.posts.each do |post| %>
@@ -117,7 +118,8 @@
           <% end %>
 
         </div>
-
+        <h5 style="font-family: 'Indie Flower', cursive;">Partagez la matiere avec vous amis</h5>
+        <%= social_share_button_tag(@matiere.name) %>
         <div class="clearfix"> </div> 
       </div>
 

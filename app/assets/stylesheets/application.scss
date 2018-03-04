@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require prettyphoto-rails
+ *= require social-share-button
  */
 
 
@@ -21,6 +22,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "arctic_admin/base";
+@import "social-share-button";
 
 
 $blue: #005FB3;
