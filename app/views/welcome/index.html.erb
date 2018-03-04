@@ -6,7 +6,7 @@
 
 
         <section id="home" class="home">
-
+        <div class="overlay">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12 ">
@@ -39,6 +39,7 @@
                         </div>
                     </div>
                 </div>
+                </div>
         </section>
 
 <section class="deusts" id="deusts">
@@ -48,7 +49,7 @@
 
         <% if deust.matieres.presence %>
         <h5 class="heading-agileinfo text-center" style="color: #223d61; margin-top: 30px"><%= deust.name %></h5>
-            <% deust.matieres.last(6).each_slice(3) do |matieres| %>
+            <% deust.matieres.first(6).each_slice(3) do |matieres| %>
                 <div class="row">
                     <% matieres.each do |matiere| %>
                         <div class="col-sm-4 col-xs-6 gallery-grid">
@@ -65,8 +66,8 @@
                     <% end %>
                 </div>
             <% end %>
+            <%= link_to "Tous les modules", deust, class: "welcome-plus-link" %>
         <% end %>
-        <%= link_to "Tous les modules", deust, class: "welcome-plus-link" %>
     <% end %>  
 </div>
 </section>

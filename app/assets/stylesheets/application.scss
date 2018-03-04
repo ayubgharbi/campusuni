@@ -869,7 +869,7 @@ input::-ms-input-placeholder {
 
 /*home section*/
 .home{
-    background: $blue;
+    background: image-url("original5.jpg") no-repeat 100% 100%;
     background-size: cover;
 }
 
@@ -6232,4 +6232,7 @@ nav.small .minilogo {
 
 .welcome-plus-link {
     padding-top: 20px;
+    font-family: 'Indie Flower', cursive;
+    position: relative;
+    top: 10px;
 }
