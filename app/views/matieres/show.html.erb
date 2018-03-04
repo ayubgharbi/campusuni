@@ -118,8 +118,8 @@
           <% end %>
 
         </div>
-        <h5 style="font-family: 'Indie Flower', cursive;">Partagez la matiere avec vous amis</h5>
-        <%= social_share_button_tag(@matiere.name) %>
+        <h5 style="font-family: 'Indie Flower', cursive;">Partagez le module avec vous amis</h5>
+        <%= social_share_button_tag('Share to Facebook', :url => deust_matiere_path(@deust, @matiere), desc: @matiere.name) %>
         <div class="clearfix"> </div> 
       </div>
 
