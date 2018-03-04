@@ -41,8 +41,35 @@
                 </div>
         </section>
 
+<section class="deusts" id="deusts">
+<div class="container">
 
+    <% @deusts.each do |deust| %>
 
+        <% if deust.matieres.presence %>
+        <h5 class="heading-agileinfo text-center" style="color: #223d61; margin-top: 30px"><%= deust.name %></h5>
+            <% deust.matieres.last(6).each_slice(3) do |matieres| %>
+                <div class="row">
+                    <% matieres.each do |matiere| %>
+                        <div class="col-sm-4 col-xs-6 gallery-grid">
+                          <%= link_to deust_matiere_path(deust, matiere) do %>
+                            <div class="grid effect-apollo"> 
+                              <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
+                              <div class="figcaption">
+                                <p style="font-size: 20px;"><%= matiere.name %></p>
+                              </div> 
+                            </div> 
+                          <% end %> 
+                          <p style="font-size: 20px;"><%= matiere.name %></p>
+                        </div>
+                    <% end %>
+                </div>
+            <% end %>
+        <% end %>
+        <%= link_to "Tous les modules", deust, class: "welcome-plus-link" %>
+    <% end %>  
+</div>
+</section>
 
         <section id="counter" class="counter">
             <div class="container-fluid">

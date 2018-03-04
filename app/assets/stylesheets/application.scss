@@ -1375,7 +1375,7 @@ blockquote footer, blockquote small, blockquote .small {
 }
 .copyright_text p{
     font-family: 'Indie Flower', cursive;
-    color: #223d61;
+    color: $blue;
     font-size:0.8125rem;
     line-height: 25px;
     padding:40px;
@@ -1397,7 +1397,7 @@ blockquote footer, blockquote small, blockquote .small {
 }
 .footer_socail a i{
     font-size:0.8125rem;
-    color: #223d61;
+    color: $blue;
     padding: 0px 10px;
 }
 
@@ -6228,4 +6228,8 @@ nav.small .minilogo {
 .post_image {
     width: 240px;
     height: 240px;
+}
+
+.welcome-plus-link {
+    padding-top: 20px;
 }
