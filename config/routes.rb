@@ -7,13 +7,11 @@ Rails.application.routes.draw do
 
   root to: "welcome#index"
 
-controller :sessions do
+  controller :sessions do
     get 'login' => :new
     post 'login' => :create
     delete 'logout' => :destroy
   end
-
-  resources :users
   
   resources :posts
   resources :deusts do 
