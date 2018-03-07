@@ -35,7 +35,7 @@
                                             <span class="icon-bar"></span>
                                         </button>
                                          <%= link_to root_path, class: "navbar-brand" do %>
-                                            <h4 id="logo"> <%= image_tag "164956.svg", class: "logo-img" %>
+                                            <h4 id="logo"> <%= image_tag "164956.svg", class: "tjf" %>
                                             univercours </h4>
                                          <% end %>
                                     </div>
@@ -71,6 +71,7 @@
                                                     </li>
                                                 </ul>
                                             </li>
+                               
                                         </ul>
 
                                         
@@ -122,7 +123,9 @@
                                         <%= link_to root_path, class: "navbar-brand" do %>
                                             <h4 id="logo"> <%= image_tag "164956.svg", class: "logo-img" %>
                                             univercours </h4>
-                                         <% end %>
+                                        <% end %>
+
+
                                     </div>
 
                                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -133,6 +136,7 @@
 
                                     
                                         <ul class="nav navbar-nav navbar-right">
+                                        
                                             <li><a href="#home">Accueil</a></li>
                                             <% Deust.all.order("created_at ASC").each do |deust| %>
                                                 <li>
@@ -144,6 +148,7 @@
                                             <% end %>
 
                                             <li><a href="#counter">compteur</a></li>
+                                                
                                         </ul>
 
 

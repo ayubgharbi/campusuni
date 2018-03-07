@@ -8,7 +8,14 @@
 	<div class="row">
 	
 		<div class="col-md-7">
-			<h5 class="heading-agileinfo text-left"><%= @post.deust.name %> / <%= @post.matiere.semester.name %> / <%= @post.matiere.name %></h5>
+			<h5 class="heading-agileinfo1 text-left">
+			<%= link_to deust_path(@deust) do %>
+				<%= @post.deust.name %> 
+			<% end %> / <%= link_to deust_path(@deust) do %>
+				<%= @post.matiere.semester.name %> 
+			<% end %> / <%= link_to deust_matiere_path(@deust, @matiere) do %>
+				<%= @post.matiere.name %>
+			<% end %></h5>
 	      <h3 class="heading-agileinfo text-left"><%= @post.name %></h3>
 
 	      <div class="text-left">

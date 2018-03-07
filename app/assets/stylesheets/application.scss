@@ -38,6 +38,13 @@ body {
 	width: 55px;
 	height: 55px;
 }
+
+.tjf {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    top: 2px;
+}
  
 
 #logo {
@@ -6235,4 +6242,15 @@ nav.small .minilogo {
     font-family: 'Indie Flower', cursive;
     position: relative;
     top: 10px;
+}
+
+
+.heading-agileinfo1 {
+    a {
+       color: #223d61 !important;
+       &:hover {
+         color: #223d61 !important;    
+       }; 
+    }
+    
 }

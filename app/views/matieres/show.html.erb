@@ -29,7 +29,7 @@
 
         <div class="row">
           
-            <% @matiere.posts.each do |post| %>
+            <% @matiere.posts.order("created_at DESC").each do |post| %>
             <% if post.category.name == "Cours" %>
               <div class="col-md-4 col-sm-6 col-xs-12 gallery-grid mix cat1" style="padding: 0px 50px 0px 50px;">
                   <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
