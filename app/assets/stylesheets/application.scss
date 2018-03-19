@@ -39,6 +39,12 @@ body {
     src: url(/assets/HelveticaRoundedLTStd-Bd.otf) format("truetype");
 }
 
+
+@font-face {
+    font-family: "Freight Sans Bold";
+    src: url(/assets/FreightSansBold.otf) format("truetype");
+}
+
 .logo-img {
 	width: 35px;
 	height: 35px;
@@ -860,6 +866,16 @@ input::-ms-input-placeholder {
 .home{
     background: #fff;
     background-size: cover;
+    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif !important;
+    color: #333;
+    h1 {
+        color: #333;
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 19px;
+        color: #333;
+    }
 }
 
 .home .main_home{
@@ -6227,9 +6243,7 @@ nav.small .minilogo {
 
 
 .heading-agileinfo1 {
-    font-family: HelveticaRoundedLTStd-Bd;
     a {
-       font-family: HelveticaRoundedLTStd-Bd;
        color: #223d61 !important;
        &:hover {
          color: #223d61 !important;    
@@ -6244,7 +6258,8 @@ nav.small .minilogo {
 }
 
 
-.footer-policy {
-    margin-top: 50px;
-    height: 60px;
+footer {
+    padding-top: 30px;
+    background: #fff;
+    height: 90px;
 }
