@@ -25,7 +25,7 @@
 @import "social-share-button";
 
 
-$blue: #005FB3;
+$blue: #4267b2;
 $blue1: #0092F6;
 $green: #5e9a28;
 
@@ -34,9 +34,16 @@ body {
 	font-family: Helvetica, Arial, sans-serif;
 }
 
+@font-face {
+    font-family: "HelveticaRoundedLTStd-Bd";
+    src: url(/assets/HelveticaRoundedLTStd-Bd.otf) format("truetype");
+}
+
 .logo-img {
-	width: 55px;
-	height: 55px;
+	width: 35px;
+	height: 35px;
+    position: relative;
+    bottom: 7px;
 }
 
 .tjf {
@@ -49,50 +56,14 @@ body {
 
 #logo {
     font-family: 'Indie Flower', cursive;
-    color: black;
-    font-size: 25px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
     position: relative;
     bottom: 15px;
 }
 
-.navbar {
-  background: #fff;
-  border: none;
-}
 
-.my-navbar {
-	background: #fff;
-  .navbar-brand {
-		text-transform: uppercase;
-		letter-spacing: -1px;
-		font-size: 22px;
-		a {
-			background: #fff;
-			color: $blue;
-			&:hover {
-				color: $blue;
-				background-color: white;
-				text-decoration: underline;
-			}
-		}
-	}
-	li {
-		background: #fff;
-		a {
-			background: #fff;
-			&:hover {
-				background-color: #FFF;
-				position: relative;
-				top: 1px;
-			}
-		}
-	}
-}
-
-.jumbotron {
-	height: 500px;
-	background: linear-gradient(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.43)), image-url("50995493_xxl.jpg") no-repeat center center;
-}
 
 
 /*#####################
@@ -778,14 +749,17 @@ input::-ms-input-placeholder {
     -webkit-transition:all .3s;
     -moz-transition:all .3s;
     transition:all .3s;
-    height: 120px;
+    height: 60px;
         
 }
 
 
 .main_menu_bg{
     margin-top: 0px;
-    background-color: #fff;
+    background-color: #4267b2;
+    border-bottom: 1px solid #29487d;
+    color: #fff;
+    height: 60px;
 }
 .main_menu_bg .navbar-default {
     background-color: transparent; 
@@ -806,12 +780,20 @@ input::-ms-input-placeholder {
 }
 
 .main_menu_bg .navbar-nav>li>a {
-    padding-top: 15px;
-    padding-bottom: 20px;
+    background-color: transparent;
+    color: inherit;
+    display: inline-block;
+    font-size: 12px;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    height: 27px;
+    line-height: 28px;
+    padding: 0 10px 1px;
+    position: relative;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
     text-transform: uppercase;
-    font-size: 1.275rem;
-    color: black;
-    font-family: 'Indie Flower', cursive;
     &:hover {
         position: relative;
         bottom: 2px;
@@ -1268,7 +1250,7 @@ blockquote footer, blockquote small, blockquote .small {
 .counter .main_counter{}
 .counter .main_counter{}
 .single_left_counter_bg{
-    background: asset-url("cleftbg3.png") no-repeat 100% 100%;
+    background: asset-url("cleftbg1.png") no-repeat 100% 100%;
     display: inline-block;
     max-width: 500px;
     float: left;
@@ -1278,7 +1260,7 @@ blockquote footer, blockquote small, blockquote .small {
 }
 .counter .main_counter .single_counter_left{
     padding-left: 130px;
-    color: #fff;
+    color: #4267b2;
     overflow: hidden;
 }
 .counter .main_counter .single_counter_left h2{
@@ -1293,8 +1275,8 @@ blockquote footer, blockquote small, blockquote .small {
     padding-bottom: 55px;
 }
 .counter .single_counter_right_area .single_counter_right i{
-    color: #005FB3;
-    font-size:4.0625rem;
+    color: #4267b2;
+    font-size: 3.0625rem;
     margin-bottom:40px;
 }
 .counter .single_counter_right_area .single_counter_right h2{
@@ -1303,8 +1285,8 @@ blockquote footer, blockquote small, blockquote .small {
     line-height: 0;
 }
 .counter .single_counter_right_area .single_counter_right p{
+    font-family: HelveticaRoundedLTStd-Bd;
     color:#223d61;
-    font-family: Helvetica, Arial, sans-serif;
 }
 
 
@@ -1462,7 +1444,6 @@ blockquote footer, blockquote small, blockquote .small {
 
 .video{
     background-size: cover;
-    background: #1c1c1c;
 }
 
 .video .head_title {
@@ -6246,11 +6227,24 @@ nav.small .minilogo {
 
 
 .heading-agileinfo1 {
+    font-family: HelveticaRoundedLTStd-Bd;
     a {
+       font-family: HelveticaRoundedLTStd-Bd;
        color: #223d61 !important;
        &:hover {
          color: #223d61 !important;    
        }; 
     }
     
+}
+
+
+.navbar-brand {
+    margin-bottom: 15px;
+}
+
+
+.footer-policy {
+    margin-top: 50px;
+    height: 60px;
 }
