@@ -858,7 +858,7 @@ input::-ms-input-placeholder {
 
 /*home section*/
 .home{
-    background: image-url("original5.jpg") no-repeat 100% 100%;
+    background: #fff;
     background-size: cover;
 }
 
@@ -1250,7 +1250,7 @@ blockquote footer, blockquote small, blockquote .small {
 .counter .main_counter{}
 .counter .main_counter{}
 .single_left_counter_bg{
-    background: asset-url("cleftbg1.png") no-repeat 100% 100%;
+    background: asset-url("cleftbg3.png") no-repeat 100% 100%;
     display: inline-block;
     max-width: 500px;
     float: left;
@@ -1260,7 +1260,7 @@ blockquote footer, blockquote small, blockquote .small {
 }
 .counter .main_counter .single_counter_left{
     padding-left: 130px;
-    color: #4267b2;
+    color: #fff;
     overflow: hidden;
 }
 .counter .main_counter .single_counter_left h2{
