@@ -5,12 +5,11 @@
 
 <section class="home" id"home">
     
-                <div class="container text-center" style="margin-top: 100px">
+                <div class="container" style="margin-top: 100px">
                     <div class="row">
                         <div class="col-md-12">
                             <h4 class="home-logo"> <%= image_tag "182321.svg", class: "logo-img" %>
-                                            univercours <%= image_tag "182321.svg", class: "logo-img" %></h4>
-                            <h1 class="home-logo"><%= image_tag "182321.svg", class: "logo-img" %> COURS/TDS/CCS <%= image_tag "182321.svg", class: "logo-img" %></h1>
+                                            Cours <%= image_tag "182321.svg", class: "logo-img" %> TDS <%= image_tag "182321.svg", class: "logo-img" %> CCS <%= image_tag "182321.svg", class: "logo-img" %></h4>
                         </div>
                     </div>
                 </div>
@@ -23,9 +22,7 @@
     <% @deusts.each do |deust| %>
 
         <% if deust.matieres.presence %>
-        <div class="welcome-plus-link text-right">
-            <%= link_to "Tous les modules", deust %>    
-        </div>
+        
        
         <h5 class="heading-agileinfo text-center" style="color: #223d61; margin-top: 30px;"><%= deust.name %></h5>
             <% deust.matieres.first(6).each_slice(3) do |matieres| %>
@@ -44,7 +41,11 @@
                         </div>
                     <% end %>
                 </div>
+
             <% end %>
+            <div class="welcome-plus-link text-right">
+                <%= link_to "Tous les modules", deust %>    
+            </div>
             
         <% end %>
     <% end %>  
