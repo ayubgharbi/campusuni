@@ -6238,13 +6238,14 @@ nav.small .minilogo {
 }
 
 .welcome-plus-link {
+    margin-top: 30px;
+    margin-bottom: 50px;
     a {
         font-family: 'Indie Flower', cursive;
         padding: 10px;
         background: #fff;
         border: 1px solid $blue;
         color: $blue !important;
-        margin-bottom: 30px;
         &:hover {
             background: $blue;
             color: #fff !important;     
