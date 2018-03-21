@@ -70,7 +70,10 @@ body {
 }
 
 
-
+.home-logo {
+    font-family: 'Indie Flower', cursive;
+    color: black;
+}
 
 /*#####################
 Additional Styles (required)
@@ -6235,10 +6238,17 @@ nav.small .minilogo {
 }
 
 .welcome-plus-link {
-    padding-top: 20px;
-    font-family: 'Indie Flower', cursive;
-    position: relative;
-    top: 10px;
+    a {
+        font-family: 'Indie Flower', cursive;
+        padding: 10px;
+        background: #fff;
+        border: 1px solid $blue;
+        color: $blue !important;
+        &:hover {
+            background: $blue;
+            color: #fff !important;     
+        };
+    }
 }
 
 
@@ -6250,6 +6260,11 @@ nav.small .minilogo {
        }; 
     }
     
+}
+
+.heading-agileinfo {
+   font-size: 18px;
+   color: #223d61 !important;
 }
 
 

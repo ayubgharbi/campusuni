@@ -2,7 +2,11 @@ class PostsController < ApplicationController
   before_action :set_deust
   before_action :set_matiere
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authorize, only: [:show]
+  skip_before_action :authorize, only: [:index, :show]
+
+  def index
+    @posts = Post.search(params[:name])
+  end
 
   def show 
   end 
@@ -58,11 +62,11 @@ class PostsController < ApplicationController
     end
 
     def set_matiere
-      @matiere = Matiere.find(params[:matiere_id]) 
+      @matiere = Matiere.find(params[:matiere_id]) if params[:matiere_id]
     end
 
     def set_deust
-      @deust = Deust.find(params[:deust_id])
+      @deust = Deust.find(params[:deust_id]) if params[:deust_id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

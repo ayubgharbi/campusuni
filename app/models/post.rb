@@ -8,4 +8,12 @@ class Post < ApplicationRecord
 	def to_param
     	"#{id} #{name}".parameterize
   	end
+
+  	def self.search(name)
+	  if name
+	    where('name LIKE ?', "%#{name}%").order('id DESC')
+	  else
+	    order('id DESC') 
+	  end
+	end
 end
