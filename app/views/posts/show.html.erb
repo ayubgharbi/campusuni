@@ -73,8 +73,10 @@
       		  		<h5 style="margin-top: 20px"><%= @post.matiere.name %></h5>
 		  	
 		  	<% @matiere.posts.order("created_at DESC").each do |post| %>
-	                <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
-	                	<p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-	              	<% end %>
+			  	<% if post.name != @post.name %>
+		            <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
+		               	<p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
+		            <% end %>
+		        <% end %>
             <% end %>
 </div>
