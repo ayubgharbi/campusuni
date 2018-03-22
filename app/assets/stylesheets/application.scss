@@ -6277,10 +6277,10 @@ nav.small .minilogo {
     font-family: 'Indie Flower', cursive;
     width: 100px;
     padding: 5px;
-   font-size: 20px;
-   background: #fff;
-        border: 1px solid $blue;
-        color: $blue !important;
+    font-size: 20px;
+    background: $blue;
+    border: 1px solid #fff;
+    color: #fff !important;
 }
 .navbar-brand {
     margin-bottom: 15px;
