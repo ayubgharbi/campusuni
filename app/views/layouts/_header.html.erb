@@ -33,7 +33,6 @@
                                      
 
                                         <ul class="nav navbar-nav navbar-right">
-                                            <li><%= link_to "Accueil", root_path %></li>
                                             <% Deust.all.order("created_at ASC").each do |deust| %>
                                                 <li>
                                                     <%= link_to deust.name, deust_path(deust), class: "link" %>
@@ -42,24 +41,16 @@
                                              <% if session[:user_id] %>
                                                 <li><%= link_to 'logout',   logout_path, method: :delete %></li>
                                             <% end %>
-                                            <li>
-                                                <a href="#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                    <span class="glyphicon glyphicon-search"></span></a>
-                                                <ul class="dropdown-menu">
-                                                    <li>
-                                                        <form class="navbar-form" role="search">
-                                                            <div class="form-group">
-                                                                <input type="text" class="form-control" placeholder="Search">
-                                                            </div>
-                                                        </form>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                               
+                      
                                         </ul>
 
                                         <ul class="nav navbar-nav navbar-left">
-                         
+                                            <%= form_tag(posts_path, method: :get) do %>
+                                              <%= text_field_tag :name, params[:name], id: "field-search" %>
+                                              <%= button_tag(type: 'submit', id: "btn-transparent") do %>
+                                                  <span class="glyphicon glyphicon-search btn-transparent"></span> 
+                                                <% end %>
+                                            <% end %>
                                         </ul>
                                         
                                     </div>
@@ -109,7 +100,6 @@
                                     
                                         <ul class="nav navbar-nav navbar-right">
                                         
-                                            <li><a href="#home">Accueil</a></li>
                                             <% Deust.all.order("created_at ASC").each do |deust| %>
                                                 <li>
                                                     <%= link_to deust.name, deust_path(deust), class: "link" %>
@@ -119,12 +109,16 @@
                                                 <li><%= link_to 'logout',   logout_path, method: :delete %></li>
                                             <% end %>
 
-                                            <li><a href="#counter">compteur</a></li>
                                                 
                                         </ul>
 
                                         <ul class="nav navbar-nav navbar-left">
-                       
+                                            <%= form_tag(posts_path, method: :get) do %>
+                                              <%= text_field_tag :name, params[:name], id: "field-search" %>
+                                              <%= button_tag(type: 'submit', id: "btn-transparent") do %>
+                                                  <span class="glyphicon glyphicon-search"></span> 
+                                                <% end %>
+                                            <% end %>
                                         </ul>
 
                                     </div>

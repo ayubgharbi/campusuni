@@ -1,94 +1,18 @@
-  <div class="container" style="padding-top: 30px;">
-     <div class="row">
-          
-            <% @posts.order("created_at DESC").each do |post| %>
-            <% if post.category.name == "Cours" %>
-              <div class="col-md-4 col-sm-6 col-xs-12 gallery-grid mix cat1" style="padding: 0px 50px 0px 50px;">
-                  <%= link_to post_path(post) do %>
-
-                <div class="grid effect-apollo"> 
-                  <div class="figcaption">
-                    <p style="font-size: 20px;"><%= post.name %></p>
-                  </div> 
-                </div> 
-                  <% if post.pdfs.presence %>
+<div class="container" style="padding-top: 100px;">
+  <div class="row">
+    <% @posts.order("created_at DESC").each do |post| %>
+      <div class="col-md-4 col-sm-6 col-xs-12 gallery-grid mix cat1" style="padding: 0px 50px 0px 50px;">
+        <%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
+          <% if post.pdfs.presence %>
                     <iframe src=<%= post.pdfs.first.link %> width="240" height="240"></iframe>
                   <% else %>
                     <% if post.images.presence %>
                       <%= image_tag post.images.first.image.url(:thumb), class: "post_image" %>
                     <% end %>
                   <% end %>
-                <p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-              <% end %>
-              </div>
-            <% end %>
-
-          
-            <% if post.category.name == "TDS" %>
-              <div class="col-md-4 col-sm-6 col-xs-12 gallery-grid mix cat2" style="padding: 0px 50px 0px 50px;">
-                  <%= link_to post_path(post) do %>
-
-                <div class="grid effect-apollo"> 
-                  <div class="figcaption">
-                    <p style="font-size: 20px;"><%= post.name %></p>
-                  </div> 
-                </div> 
-                  <% if post.pdfs.presence %>
-                    <iframe src=<%= post.pdfs.first.link %> width="240" height="240"></iframe>
-                  <% else %>
-                    <% if post.images.presence %>
-                      <%= image_tag post.images.first.image.url(:thumb), class: "post_image" %>
-                    <% end %>
-                  <% end %>
-                <p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-              <% end %>
-              </div>
-            <% end %>
-
-          
-            <% if post.category.name == "CCS" %>
-              <div class="col-md-4 col-sm-6 col-xs-12 gallery-grid mix cat3" style="padding: 0px 50px 0px 50px;">
-                  <%= link_to post_path(post) do %>
-
-                <div class="grid effect-apollo"> 
-                  <div class="figcaption">
-                    <p style="font-size: 20px;"><%= post.name %></p>
-                  </div> 
-                </div> 
-                  <% if post.pdfs.presence %>
-                    <iframe src=<%= post.pdfs.first.link %> width="240" height="240"></iframe>
-                  <% else %>
-                    <% if post.images.presence %>
-                      <%= image_tag post.images.first.image.url(:thumb), class: "post_image" %>
-                    <% end %>
-                  <% end %>
-                <p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-              <% end %>
-              </div>
-            <% end %>
-
-            <% if post.category.name == "TP" %>
-              <div class="col-md-4 col-sm-6 col-xs-12 gallery-grid mix cat4" style="padding: 0px 50px 0px 50px;">
-                  <%= link_to post_path(post) do %>
-
-                <div class="grid effect-apollo"> 
-                  <div class="figcaption">
-                    <p style="font-size: 20px;"><%= post.name %></p>
-                  </div> 
-                </div> 
-                  <% if post.pdfs.presence %>
-                    <iframe src=<%= post.pdfs.first.link %> width="240" height="240"></iframe>
-                  <% else %>
-                    <% if post.images.presence %>
-                      <%= image_tag post.images.first.image.url(:thumb), class: "post_image" %>
-                    <% end %>
-                  <% end %>
-                <p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-              <% end %>
-              </div>
-            <% end %>
-          <% end %>
-
-        </div>
-
-        </div>
+          <p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>  
+</div>

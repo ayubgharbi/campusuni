@@ -5975,7 +5975,6 @@ nav.small .main-nav {
 }
 
 nav.small ul.nav {
-    padding-left:150px
 }
 
 nav.small .minilogo {
@@ -6272,7 +6271,17 @@ nav.small .minilogo {
    color: #223d61 !important;
 }
 
-
+.heading-agileinfo2 {
+    text-align: center;
+    margin: 5px auto;
+    font-family: 'Indie Flower', cursive;
+    width: 100px;
+    padding: 5px;
+   font-size: 20px;
+   background: #fff;
+        border: 1px solid $blue;
+        color: $blue !important;
+}
 .navbar-brand {
     margin-bottom: 15px;
 }
@@ -6282,4 +6291,14 @@ footer {
     padding-top: 30px;
     background: #fff;
     height: 90px;
+}
+
+#btn-transparent {
+    background: transparent;
+    display: inline-block;
+}
+
+#field-search {
+    display: inline-block;
+    width: 200px !important;
 }
