@@ -37,7 +37,7 @@
 <div class="container">
         <div class="row">
           
-            <% @posts.order("created_at DESC").each do |post| %>
+            <% @posts.each do |post| %>
               <div class="col-md-4 col-sm-6 col-xs-12 gallery-grid mix cat1" style="padding: 0px 50px 0px 50px;">
                   <%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
 
