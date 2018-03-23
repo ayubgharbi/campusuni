@@ -45,7 +45,7 @@
        
         <h3 class="heading-agileinfo2 text-center" style="color: #223d61; margin-top: 30px;"><%= deust.name %></h3>
                 <div class="row">
-                    <% deust.matieres.each do |matiere| %>
+                    <% deust.matieres.first(6).each do |matiere| %>
                         <div class="col-md-4 col-sm-6 col-xs-6 gallery-grid">
                           <%= link_to deust_matiere_path(deust, matiere) do %>
                             <div class="grid effect-apollo"> 
