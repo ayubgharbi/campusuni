@@ -13,17 +13,17 @@
                                 <div class="row">
                                     <div class="col-md-4 col-sm-4 col-xs-4">
                                         <div class="single_counter_right">
-                                            <h6>Cours</h6>
+                                            <h4>Cours</h4>
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-4">
                                         <div class="single_counter_right">
-                                            <h6>TDS</h6>
+                                            <h4>TDS</h4>
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-4 col-xs-4">
                                         <div class="single_counter_right">
-                                            <h6>CCS</h6>
+                                            <h4>CCS</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -43,11 +43,10 @@
         <% if deust.matieres.presence %>
         
        
-        <h5 class="heading-agileinfo2 text-center" style="color: #223d61; margin-top: 30px;"><%= deust.name %></h5>
-            <% deust.matieres.first(6).each_slice(3) do |matieres| %>
+        <h3 class="heading-agileinfo2 text-center" style="color: #223d61; margin-top: 30px;"><%= deust.name %></h3>
                 <div class="row">
-                    <% matieres.each do |matiere| %>
-                        <div class="col-sm-4 col-xs-6 gallery-grid">
+                    <% deust.matieres.each do |matiere| %>
+                        <div class="col-md-4 col-sm-6 col-xs-6 gallery-grid">
                           <%= link_to deust_matiere_path(deust, matiere) do %>
                             <div class="grid effect-apollo"> 
                               <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
@@ -61,7 +60,6 @@
                     <% end %>
                 </div>
 
-            <% end %>
             <div class="welcome-plus-link text-right">
                 <%= link_to "Tous les modules", deust %>    
             </div>
