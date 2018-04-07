@@ -34,32 +34,7 @@
             </div>
         </section>
 
-<div class="container">
-        <div class="row">
-            <% @posts.each do |post| %>
-              <div class="col-md-3 col-sm-6 col-xs-12 gallery-grid mix cat1" style="padding: 0px 50px 0px 50px;">
-                  <%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
 
-                <div class="grid effect-apollo"> 
-                  <div class="figcaption">
-                    <p style="font-size: 20px;"><%= post.name %></p>
-                  </div> 
-                </div> 
-                  <% if post.pdfs.presence %>
-                    <iframe src=<%= post.pdfs.first.link %> width="240" height="240"></iframe>
-                  <% else %>
-                    <% if post.images.presence %>
-                      <%= image_tag post.images.first.image.url(:thumb), class: "post_image" %>
-                    <% end %>
-                  <% end %>
-                <p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-              <% end %>
-              </div>
-            <% end %>
-
-     </div>     
-
-        </div>
 
 <section class="deusts" id="deusts">
 <div class="container text-center">
