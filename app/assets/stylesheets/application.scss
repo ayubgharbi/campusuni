@@ -25,10 +25,10 @@
 @import "social-share-button";
 
 
-$blue2: #4267b2;
+$blue: #4267b2;
 $blue1: #0092F6;
 $green: #5e9a28;
-$blue: #002a32;
+$blue2: #002a32;
 
 
 @font-face {
@@ -59,7 +59,7 @@ $blue: #002a32;
 
 #logo {
     font-family: 'Indie Flower', cursive;
-    color: #00d6d6;
+    color: #fff;
     font-size: 18px;
     font-weight: bold;
     position: relative;
@@ -627,7 +627,7 @@ Button
     color: $blue;
     padding-top: 5px 10px 5px 10px;
     &:hover {
-        color: #00d6d6;
+        color: #fff;
     };
 }
 
@@ -776,7 +776,7 @@ input::-ms-input-placeholder {
     margin: 15px auto;
 }
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus{
-    color:#00d6d6;
+    color: #dfff00;
 }
 .main_menu_bg .navbar {}
 
@@ -1043,7 +1043,7 @@ input::-ms-input-placeholder {
 }
 .main_mix_menu ul li.active {
     background: $blue;
-    color: #00d6d6; 
+    color: #fff; 
     &:hover {
     	background: $blue;
     };
@@ -1268,7 +1268,7 @@ blockquote footer, blockquote small, blockquote .small {
 .counter .main_counter{}
 .counter .main_counter{}
 .single_left_counter_bg{
-    background: asset-url("cleftbg4.png") no-repeat 100% 100%;
+    background: asset-url("cleftbg3.png") no-repeat 100% 100%;
     display: inline-block;
     max-width: 500px;
     float: left;
@@ -6219,7 +6219,7 @@ nav.small .minilogo {
         color: $blue !important;
         &:hover {
             background: $blue;
-            color: #00d6d6 !important;     
+            color: #fff !important;     
         };
     }
 }
@@ -6246,8 +6246,8 @@ nav.small .minilogo {
     width: 100px;
     padding: 5px;
     background: $blue;
-    border: 1px solid #00d6d6;
-    color: #00d6d6; 
+    border: 1px solid #fff;
+    color: #fff; 
     margin-top: 30px;
     border-radius: 3px;
 }

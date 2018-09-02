@@ -966,7 +966,7 @@ if (typeof Object.create !== 'function') {
 
     window.addEventListener('DOMContentLoaded', function() {
         new QueryLoader2(document.querySelector("body"), {
-            barColor: "#00d6d6",
+            barColor: "#fff",
             backgroundColor: "#111",
             barHeight: 1,
             minimumTime: 200,
