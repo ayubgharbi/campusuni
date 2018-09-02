@@ -25,14 +25,11 @@
 @import "social-share-button";
 
 
-$blue: #4267b2;
+$blue2: #4267b2;
 $blue1: #0092F6;
 $green: #5e9a28;
+$blue: #002a32;
 
-
-body {
-	font-family: Helvetica, Arial, sans-serif;
-}
 
 @font-face {
     font-family: "HelveticaRoundedLTStd-Bd";
@@ -62,7 +59,7 @@ body {
 
 #logo {
     font-family: 'Indie Flower', cursive;
-    color: white;
+    color: #00d6d6;
     font-size: 18px;
     font-weight: bold;
     position: relative;
@@ -142,9 +139,9 @@ Additional Styles (required)
 
 #myCarousel {
     margin-top: 30px;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Rubik', sans-serif;
     p {
-    	font-family: Helvetica, Arial, sans-serif;
+    	font-family: 'Rubik', sans-serif;
     }
 }
 
@@ -241,7 +238,7 @@ body {
     padding: 0;
     margin-left: 0;
     margin-right: 0;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: 300;
 }
 
@@ -314,7 +311,7 @@ p {
 
 }
 a{
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Rubik', sans-serif;
     text-decoration: none !important;
 }
 .clear {
@@ -384,7 +381,7 @@ h5 {
 h1 {
     font-size: 4.375rem;
     line-height: 5.5rem;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Rubik', sans-serif;
     color:#fff;
 }
 h2 {
@@ -392,12 +389,12 @@ h2 {
     line-height: 3rem;
     margin-bottom: 35px;
     text-transform: uppercase;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 h3 {
     font-size:1.875rem;
     line-height: 2.5rem;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Rubik', sans-serif;
     margin-bottom:35px;
     text-transform: uppercase;
 }
@@ -411,7 +408,7 @@ h5 {
     font-size: 1.125rem;
     margin-bottom: 1rem;
     color:#223d61;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Rubik', sans-serif;
     text-transform: uppercase;
 }
 h6 {
@@ -593,7 +590,6 @@ Button
 
 .btn {
     display: inline-block;
-    min-width: 230px;
     padding: .4em;
     height: 45px;
     text-align: center;
@@ -601,7 +597,7 @@ Button
     letter-spacing: 1px;
     margin: 0;
     font-size: 20px;
-    border-radius: 40px;
+    border-radius: 3px;
     margin-top: 20px;
     background-color: transparent;
     transition: .5s; 
@@ -629,6 +625,10 @@ Button
 .btn-md{
     border:1px solid $blue;
     color: $blue;
+    padding-top: 5px 10px 5px 10px;
+    &:hover {
+        color: #00d6d6;
+    };
 }
 
 
@@ -764,7 +764,7 @@ input::-ms-input-placeholder {
 
 .main_menu_bg{
     margin-top: 0px;
-    background-color: #4267b2;
+    background-color: $blue;
     border-bottom: 1px solid #29487d;
     color: #fff;
     height: 60px;
@@ -776,7 +776,7 @@ input::-ms-input-placeholder {
     margin: 15px auto;
 }
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus{
-    color:#f6c23a;
+    color:#00d6d6;
 }
 .main_menu_bg .navbar {}
 
@@ -868,7 +868,7 @@ input::-ms-input-placeholder {
 .home{
     background: #fff;
     background-size: cover;
-    font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif !important;
+    font-family: 'Rubik', sans-serif;
     color: #333;
     h1 {
         color: #333;
@@ -895,7 +895,7 @@ input::-ms-input-placeholder {
 .home .main_home p.subtitle{
     color: #5e9a28;
     padding-bottom: 25px;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size:2.5rem;
     text-transform: uppercase;
 }
@@ -1042,10 +1042,10 @@ input::-ms-input-placeholder {
     color: #223d61;
 }
 .main_mix_menu ul li.active {
-    background: #005FB3;
-    color:#fff; 
+    background: $blue;
+    color: #00d6d6; 
     &:hover {
-    	background: #005FB3;
+    	background: $blue;
     };
 }
 
@@ -1268,7 +1268,7 @@ blockquote footer, blockquote small, blockquote .small {
 .counter .main_counter{}
 .counter .main_counter{}
 .single_left_counter_bg{
-    background: asset-url("cleftbg3.png") no-repeat 100% 100%;
+    background: asset-url("cleftbg4.png") no-repeat 100% 100%;
     display: inline-block;
     max-width: 500px;
     float: left;
@@ -1293,7 +1293,7 @@ blockquote footer, blockquote small, blockquote .small {
     padding-bottom: 55px;
 }
 .counter .single_counter_right_area .single_counter_right i{
-    color: #4267b2;
+    color: $blue;
     font-size: 3.0625rem;
     margin-bottom:40px;
 }
@@ -1303,12 +1303,12 @@ blockquote footer, blockquote small, blockquote .small {
     line-height: 0;
 }
 .counter .single_counter_right_area .single_counter_right p{
-    font-family: HelveticaRoundedLTStd-Bd;
+    font-family: 'Rubik', sans-serif;
     color:#223d61;
 }
 
 .counter .single_counter_right_area .single_counter_right h4{
-    font-family: HelveticaRoundedLTStd-Bd;
+    font-family: 'Rubik', sans-serif;
     color:#223d61;
 }
 
@@ -1927,7 +1927,7 @@ ul.thumbs li.content .close {
     color: #c2c2c2;
     cursor: pointer;
     font-weight: normal;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: 76px;
     line-height: 70px;
 }
@@ -5047,8 +5047,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .lnr {
-	font-family: Helvetica, Arial, sans-serif;
-	speak: none;
+	font-family: 'Rubik', sans-serif;	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -5581,7 +5580,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   padding-bottom: 40px;
   position: relative;
   margin: 5px 0;
-  font-family: Helvetica, Arial, sans-serife;
+  font-family: 'Rubik', sans-serif;
   font-size: 15px;
   line-height: 15px;
   font-weight: 400;
@@ -5608,7 +5607,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 } 
 .progress-number-wrapper,
 .progress-number-mark {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 11px;
   line-height: 24px;
   height: 24px;
@@ -5645,7 +5644,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	margin-bottom: 20px;
 }
 .sonny_progressbar p.title {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Rubik', sans-serif;
 	font-size: 16px;
 	line-height: 20px;
 	margin: 0;
@@ -5692,7 +5691,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	border-bottom: 3px solid rgba(0,0,0,.2);
 }
 .sonny_progressbar .progress-percent {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Rubik', sans-serif;
 	font-size: 16px;
 	position: absolute;
 	right: 15px;
@@ -5728,36 +5727,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   50%   { opacity:.1; }
   100% { opacity:.01; }
 }
-
-/*html,body {
-  width:100%
-}
-
-body {
-  font-family:"Roboto Condensed",sans-serif;
-  color:#000;
-  background-color:#f1f1f1;
-  font-size:15px;
-  padding-bottom:50px
-}*/
-
-/*h1 {
-  font-size:60px;
-  letter-spacing:-.03em
-}
-
-p {
-  margin-bottom:15px
-}
-
-a {
-  color:#55acee
-}
-
-a:hover {
-  color:#000;
-  text-decoration:none
-}*/
 
 nav {
     background:#fff;
@@ -6250,7 +6219,7 @@ nav.small .minilogo {
         color: $blue !important;
         &:hover {
             background: $blue;
-            color: #fff !important;     
+            color: #00d6d6 !important;     
         };
     }
 }
@@ -6277,8 +6246,10 @@ nav.small .minilogo {
     width: 100px;
     padding: 5px;
     background: $blue;
-    border: 1px solid #fff;
-    color: #fff !important;
+    border: 1px solid #00d6d6;
+    color: #00d6d6; 
+    margin-top: 30px;
+    border-radius: 3px;
 }
 .navbar-brand {
     margin-bottom: 15px;

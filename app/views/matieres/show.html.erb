@@ -10,10 +10,10 @@
 
 <div class="main_mix_menu text-center">
                             <ul>
-                                <li class="btn btn-primary filter" data-filter="all" style="border-radius: 0px;">Tous</li>
-                                <li class="btn btn-primary filter" data-filter=".cat1" style="border-radius: 0px;">Cours</li>
-                                <li class="btn btn-primary filter" data-filter=".cat2" style="border-radius: 0px;">Exercices</li>
-                                <li class="btn btn-primary filter" data-filter=".cat3" style="border-radius: 0px;">CCS</li>
+                                <li class="btn btn-primary filter" data-filter="all" style="border-radius: 0px;">tous</li>
+                                <li class="btn btn-primary filter" data-filter=".cat1" style="border-radius: 0px;">cours</li>
+                                <li class="btn btn-primary filter" data-filter=".cat2" style="border-radius: 0px;">exercices</li>
+                                <li class="btn btn-primary filter" data-filter=".cat3" style="border-radius: 0px;">ccs</li>
                                 <li class="btn btn-primary filter" data-filter=".cat4" style="border-radius: 0px;">TP</li>
                             </ul>
                         </div>
@@ -46,7 +46,7 @@
                       <%= image_tag post.images.first.image.url(:thumb), class: "post_image" %>
                     <% end %>
                   <% end %>
-                <p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
+                <p style="font-size: 16px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
               <% end %>
               </div>
             <% end %>

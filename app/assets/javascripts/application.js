@@ -159,8 +159,7 @@
             height : "30",
             backgroundColor : "#E0E0E0",
             barColor : "#F97352",
-            targetBarColor : "#CCC",
-            percentage : true,
+            targetBarColor : "#CCC",  
             shadow : false,
             border : false,
             animation : false,
@@ -967,9 +966,8 @@ if (typeof Object.create !== 'function') {
 
     window.addEventListener('DOMContentLoaded', function() {
         new QueryLoader2(document.querySelector("body"), {
-            barColor: "#efefef",
+            barColor: "#00d6d6",
             backgroundColor: "#111",
-            percentage: true,
             barHeight: 1,
             minimumTime: 200,
             fadeOutTime: 1000

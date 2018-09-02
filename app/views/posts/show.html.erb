@@ -50,10 +50,10 @@
 		  	       <div class="portfolio_btn_area text-center">
 		  	       		<h5 style="font-family: 'Indie Flower', cursive;">Partagez la publication avec vous amis</h5>
 		  	       		<%= social_share_button_tag('Share to Facebook', :url => deust_matiere_post_path(@deust, @matiere, @post), desc: @post.name) %>
-			            <%= link_to "Retour", deust_matiere_path(@deust, @matiere), class: "btn btn-md" %>
+			            <%= link_to "retour", deust_matiere_path(@deust, @matiere), class: "btn btn-md" %>
 			            <% if session[:user_id] %>
-							<%= link_to "Nouveau pdf", new_deust_matiere_post_pdf_path(@deust, @matiere, @post), class: "btn btn-md" %>
-							<%= link_to "Nouveau image", new_deust_matiere_post_image_path(@deust, @matiere, @post), class: "btn btn-md" %>
+							<%= link_to "nouveau pdf", new_deust_matiere_post_pdf_path(@deust, @matiere, @post), class: "btn btn-md" %>
+							<%= link_to "nouveau image", new_deust_matiere_post_image_path(@deust, @matiere, @post), class: "btn btn-md" %>
 						<% end %>
 		            </div>
 
