@@ -1,5 +1,25 @@
 <footer>
-    <div class="container text-center">
-        <p>consultez notre politique de confidentialite</h6>
-    </div>  
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="fb-page" data-href="https://www.facebook.com/univercourscom/" data-tabs="timeline" data-height="430" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/univercourscom/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/univercourscom/">Univercours</a></blockquote></div>
+        </div>
+        <div class="col-md-4">
+        <br>
+        <h3><a style="color: black !important" href="https://www.facebook.com/univercourscom/" target="_blank"><i class="fa fa-facebook i-style"></i> / Univercours </a></h3>
+        </div>
+        <div class="col-md-4">
+        <ul>
+        <br>
+        <% Deust.all.order("created_at ASC").each do |deust| %>
+            <li>
+                <h5><%= link_to deust.name, deust_path(deust), class: "footer-deust" %></h5>
+            </li>
+        <% end %>
+        </ul>
+    </div>
+    </div>
+
+</div>
+
 </footer>
