@@ -1,135 +1,55 @@
 <% provide(:title, "#{@matiere.name}") %>
 
-
 <div class="container" style="padding-top: 30px;">
-
   <div id="lab" class="w3ls-section gallery">
-
-<div class="container">
-<h5 class="heading-agileinfo text-center" style="color: #223d61;"><%= @matiere.deust.name %> / <%= @matiere.name %></h5>
-
-<div class="main_mix_menu text-center">
-                            <ul>
-                                <li class="btn btn-primary filter" data-filter="all" style="border-radius: 0px;">tous</li>
-                                <li class="btn btn-primary filter" data-filter=".cat1" style="border-radius: 0px;">cours</li>
-                                <li class="btn btn-primary filter" data-filter=".cat2" style="border-radius: 0px;">exercices</li>
-                                <li class="btn btn-primary filter" data-filter=".cat3" style="border-radius: 0px;">ccs</li>
-                                <li class="btn btn-primary filter" data-filter=".cat4" style="border-radius: 0px;">TP</li>
-                            </ul>
-                        </div>
-  
-
-                                                   <div id="mixcontent" class="mixcontent">
-
-      <div class="gallery-grids">
-      <% if session[:user_id] %>
-        <%= link_to "Nouveau post", new_deust_matiere_post_path(@deust, @matiere) %>
-      <% end %>
-
-
-        <div class="row">
-          
-            <% @matiere.posts.order("created_at DESC").each do |post| %>
-            <% if post.category.name == "Cours" %>
-              <div class="col-md-4 col-sm-6 col-xs-12 gallery-grid mix cat1" style="padding: 0px 50px 0px 50px;">
-                  <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
-
-                <div class="grid effect-apollo"> 
-                  <div class="figcaption">
-                    <p style="font-size: 20px;"><%= post.name %></p>
-                  </div> 
-                </div> 
-                  <% if post.pdfs.presence %>
-                    <iframe src=<%= post.pdfs.first.link %> width="240" height="240"></iframe>
-                  <% else %>
-                    <% if post.images.presence %>
-                      <%= image_tag post.images.first.image.url(:thumb), class: "post_image" %>
-                    <% end %>
-                  <% end %>
-                <p style="font-size: 16px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-              <% end %>
-              </div>
+    <div class="container">
+      <h5 class="heading-agileinfo text-center" style="color: #223d61;"><%= @matiere.deust.name %> / <%= @matiere.name %></h5>
+      <div class="main_mix_menu text-center">
+        <ul>
+          <li class="btn btn-primary filter" data-filter="all" style="border-radius: 0px;">tous</li>
+          <% @categories.each do |category| %>
+            <% if category.posts.presence %>
+            <li data-filter=".<%= category.name.last(6) %>" class="btn btn-primary filter" style="border-radius: 0px;"><%= category.name %></li>
             <% end %>
-
-          
-            <% if post.category.name == "TDS" %>
-              <div class="col-md-4 col-sm-6 col-xs-12 gallery-grid mix cat2" style="padding: 0px 50px 0px 50px;">
-                  <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
-
-                <div class="grid effect-apollo"> 
-                  <div class="figcaption">
-                    <p style="font-size: 20px;"><%= post.name %></p>
-                  </div> 
-                </div> 
-                  <% if post.pdfs.presence %>
-                    <iframe src=<%= post.pdfs.first.link %> width="240" height="240"></iframe>
-                  <% else %>
-                    <% if post.images.presence %>
-                      <%= image_tag post.images.first.image.url(:thumb), class: "post_image" %>
-                    <% end %>
-                  <% end %>
-                <p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-              <% end %>
-              </div>
-            <% end %>
-
-          
-            <% if post.category.name == "CCS" %>
-              <div class="col-md-4 col-sm-6 col-xs-12 gallery-grid mix cat3" style="padding: 0px 50px 0px 50px;">
-                  <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
-
-                <div class="grid effect-apollo"> 
-                  <div class="figcaption">
-                    <p style="font-size: 20px;"><%= post.name %></p>
-                  </div> 
-                </div> 
-                  <% if post.pdfs.presence %>
-                    <iframe src=<%= post.pdfs.first.link %> width="240" height="240"></iframe>
-                  <% else %>
-                    <% if post.images.presence %>
-                      <%= image_tag post.images.first.image.url(:thumb), class: "post_image" %>
-                    <% end %>
-                  <% end %>
-                <p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-              <% end %>
-              </div>
-            <% end %>
-
-            <% if post.category.name == "TP" %>
-              <div class="col-md-4 col-sm-6 col-xs-12 gallery-grid mix cat4" style="padding: 0px 50px 0px 50px;">
-                  <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
-
-                <div class="grid effect-apollo"> 
-                  <div class="figcaption">
-                    <p style="font-size: 20px;"><%= post.name %></p>
-                  </div> 
-                </div> 
-                  <% if post.pdfs.presence %>
-                    <iframe src=<%= post.pdfs.first.link %> width="240" height="240"></iframe>
-                  <% else %>
-                    <% if post.images.presence %>
-                      <%= image_tag post.images.first.image.url(:thumb), class: "post_image" %>
-                    <% end %>
-                  <% end %>
-                <p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-              <% end %>
-              </div>
-            <% end %>
+          <% end %> 
+        </ul>
+      </div>
+      <div id="mixcontent" class="mixcontent">
+        <div class="gallery-grids">
+          <% if session[:user_id] %>
+            <%= link_to "Nouveau post", new_deust_matiere_post_path(@deust, @matiere) %>
           <% end %>
-
+          <div class="row">
+            <% @matiere.posts.order("created_at DESC").each do |post| %>
+              <div class="col-md-4 col-sm-6 col-xs-12 gallery-grid mix <%= post.category.name.last(6) %>" style="padding: 0px 50px 0px 50px;">
+                <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
+                  <div class="grid effect-apollo"> 
+                    <div class="figcaption">
+                      <p style="font-size: 20px;"><%= post.name %></p>
+                    </div> 
+                  </div> 
+                  <% if post.pdfs.presence %>
+                    <iframe src=<%= post.pdfs.first.link %> width="240" height="240"></iframe>
+                  <% else %>
+                    <% if post.images.presence %>
+                      <%= image_tag post.images.first.image.url(:thumb), class: "post_image" %>
+                    <% end %>
+                  <% end %>
+                  <p style="font-size: 16px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <h5 style="font-family: 'Indie Flower', cursive;">Partagez le module avec vous amis</h5>
+          <%= social_share_button_tag('Share to Facebook', :url => deust_matiere_path(@deust, @matiere), desc: @matiere.name) %>
+          <div class="clearfix"> </div> 
+          </div>
         </div>
-        <h5 style="font-family: 'Indie Flower', cursive;">Partagez le module avec vous amis</h5>
-        <%= social_share_button_tag('Share to Facebook', :url => deust_matiere_path(@deust, @matiere), desc: @matiere.name) %>
-        <div class="clearfix"> </div> 
-      </div>
-
-      </div>
-
-      <div class="portfolio_btn_area text-center">
+        <div class="portfolio_btn_area text-center">
             <%= link_to "Retour", deust_path(@deust) , class: "btn btn-md" %>
-            </div>
-          <div class="gap"></div>
         </div>
-        </div>
-
+        <div class="gap"></div>
+      </div>
+    </div>
+  </div>
 </div>

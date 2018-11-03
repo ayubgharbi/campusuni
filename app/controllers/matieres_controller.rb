@@ -6,8 +6,7 @@ class MatieresController < ApplicationController
 
   
   def show 
-    
-    
+    @categories = Category.all
   end 
   
   def new
