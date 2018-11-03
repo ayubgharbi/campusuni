@@ -1,121 +1,48 @@
 <% provide(:title, "#{@deust.name}") %>
 
-
 <div class="container" style="padding-top: 30px;">
-
-
-<!-- gallery -->
-  <div id="lab" class="w3ls-section gallery">
+    <div id="lab" class="w3ls-section gallery">
     <div class="container">
-      <h5 class="heading-agileinfo text-center" style="color: #223d61;"><%= @deust.name %></h5>
+        <h5 class="heading-agileinfo text-center" style="color: #223d61;"><%= @deust.name %></h5>
+        <div class="main_mix_menu text-center">
+            <ul>
+                <li class="btn btn-primary filter" data-filter="all" style="border-radius: 0px;">tous</li>
+                <% @semesters.each do |semester| %>
+                    <li data-filter=".<%= semester.name.last(6) %>" class="btn btn-primary filter" style="border-radius: 0px;"><%= semester.name %></li>
+                <% end %> 
+            </ul>
+        </div>
+        <div id="mixcontent" class="mixcontent">
+            <div class="gallery-grids">
+                <% if session[:user_id] %>
+                    <%= link_to "Nouveau matiere", new_deust_matiere_path(@deust) %>
+                <% end %>
+                <% @deust.semesters.each do |semester| %>
+                    <% semester.matieres.each_slice(3) do |matieres| %>
+                        <div class="row">
+                            <% matieres.each do |matiere| %>
+                                <div class="col-sm-4 col-xs-6 gallery-grid mix <%= matiere.semester.name.last(6) %>">
+                                    <%= link_to deust_matiere_path(@deust, matiere) do %>
+                                        <div class="grid effect-apollo"> 
+                                            <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
+                                            <div class="figcaption">
+                                                <p style="font-size: 20px;"><%= matiere.name %></p>
+                                            </div> 
+                                        </div> 
 
-          <div class="main_mix_menu text-center">
-                            <ul>
-                                <li class="btn btn-primary filter" data-filter="all" style="border-radius: 0px;">tous</li>
-                                <li class="btn btn-primary filter" data-filter=".cat1" style="border-radius: 0px;">s1</li>
-                                <li class="btn btn-primary filter" data-filter=".cat2" style="border-radius: 0px;">s2</li>
-                                <li class="btn btn-primary filter" data-filter=".cat3" style="border-radius: 0px;">s3</li>
-                                <li class="btn btn-primary filter" data-filter=".cat4" style="border-radius: 0px;">s4</li>
-                            </ul>
+                                        <p style="font-size: 20px;"><%= matiere.name %></p>
+                                    <% end %>
+                                </div>
+                            <% end %>
                         </div>
-
-                                                <div id="mixcontent" class="mixcontent">
-
-   
-      <div class="gallery-grids">
-      <% if session[:user_id] %>
-          <%= link_to "Nouveau matiere", new_deust_matiere_path(@deust) %>
-      <% end %>
-      <% @deust.semesters.each do |semester| %>
-
-      <% semester.matieres.each_slice(3) do |matieres| %>
-        <div class="row">
-          <% matieres.each do |matiere| %>
-        
-          <% if matiere.semester.name == "s1" %>
-          <div class="col-sm-4 col-xs-6 gallery-grid mix cat1">
-          <%= link_to deust_matiere_path(@deust, matiere) do %>
-            <div class="grid effect-apollo"> 
-              <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
-              <div class="figcaption">
-                <p style="font-size: 20px;"><%= matiere.name %></p>
-              </div> 
-          </div> 
-          <% end %> 
-
-          <p style="font-size: 20px;"><%= matiere.name %></p>
-          </div>
-
-          <% end %>
-
-          <% if matiere.semester.name == "s2" %>
-          <div class="col-sm-4 col-xs-6 gallery-grid mix cat2">
-          <%= link_to deust_matiere_path(@deust, matiere) do %>
-
-            <div class="grid effect-apollo"> 
-              <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
-              <div class="figcaption">
-                <p style="font-size: 20px;"><%= matiere.name %></p>
-              </div>  
-            </div> 
-          <% end %>
-
-          <p style="font-size: 20px;"><%= matiere.name %></p>
-          </div>
-          <% end %>
-
-          <% if matiere.semester.name == "s3" %>
-          <div class="col-sm-4 col-xs-6 gallery-grid mix cat3">
-            <%= link_to deust_matiere_path(@deust, matiere) do %>
-            <div class="grid effect-apollo"> 
-            
-              <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
-              <div class="figcaption">
-                <p style="font-size: 20px;"><%= matiere.name %></p>
-              </div>  
-            </div> 
-          <% end %>
-
-          <p style="font-size: 20px;"><%= matiere.name %></p>
-          </div>
-
-          <% end %>
-
-           <% if matiere.semester.name == "s4" %>
-          <div class="col-sm-4 col-xs-6 gallery-grid mix cat4">
-            <%= link_to deust_matiere_path(@deust, matiere) do %>
-
-            <div class="grid effect-apollo"> 
-              <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
-              <div class="figcaption">
-                <p style="font-size: 20px;"><%= matiere.name %></p>
-              </div>  
-          </div>
-                      <% end %>
- 
-          <p style="font-size: 20px;"><%= matiere.name %></p>
-          </div>
-
-          <% end %>
-
-          <% end %>
-
-                  </div>
-
-        <% end %>
-      <% end %>
-
-        <div class="clearfix"> </div> 
-      </div>
-
-      </div>
+                    <% end %>
+                <% end %>
+                <div class="clearfix"> </div> 
+                </div>
+            </div>
+        </div>
     </div>
-
-
-  </div>
-  <!-- //gallery -->
-
-</div>
+    </div>
 
 
         <section id="counter" class="counter">

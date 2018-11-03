@@ -9,6 +9,7 @@ class DeustsController < ApplicationController
   end 
 
   def show
+    @semesters = @deust.semesters
   end
 
   def new

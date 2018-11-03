@@ -1,4 +1,4 @@
 class Semester < ApplicationRecord
-	belongs_to :deusts, dependent: :destroy
+	belongs_to :deust, dependent: :destroy
 	has_many :matieres
 end
