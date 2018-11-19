@@ -17,9 +17,11 @@
 //= require social-share-button
 //= require_tree .
 
+
+
   jQuery(document).ready(function($) {
 
- 
+    $('.dropdown-toggle').dropdown()   
         $('#myCarousel').carousel({
                 interval: 5000
         });
