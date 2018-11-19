@@ -19,22 +19,18 @@
 		  	<% end %>
 	  		</div>	
 		</div>
-		<div class="col-md-4" style="margin-top: 70px">
-            <div class="socials">
-            <a href="https://www.facebook.com/univercourscom/" target="_blank"><i class="fa fa-facebook"></i></a>
-            <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-            </div>
-            <% @post.deust.posts.last(10).each do |post| %>
-                <div class="col-md-12 col-sm-12 col-xs-12 gallery-grid mix <%= post.category.name.last(6) %>" style="padding: 0px 50px 0px 50px;">
-                    <%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
-                    	<p style="margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-                    <% end %>
-                </div>
-            <% end %>
-        </div>
-	</div>
+		<div class="col-md-4 text-center">
+			<div class="portfolio_btn_area text-center">
+				<h5 style="font-family: 'Indie Flower', cursive;">Partagez la publication avec vous amis</h5>
+				<%= social_share_button_tag('Share to Facebook', :url => deust_matiere_post_path(@deust, @matiere, @post), desc: @post.name) %>
+				<%= link_to "retour", deust_matiere_path(@deust, @matiere), class: "btn btn-md" %>
+				<% if session[:user_id] %>
+					<%= link_to "nouveau pdf", new_deust_matiere_post_pdf_path(@deust, @matiere, @post), class: "btn btn-md" %>
+					<%= link_to "nouveau image", new_deust_matiere_post_image_path(@deust, @matiere, @post), class: "btn btn-md" %>
+				<% end %>
+		    </div>
+		</div>
+    </div>
 	<% if @matiere.posts.count > 1 %>
       	<h5 style="margin-top: 20px"><%= @post.matiere.name %></h5>
 		<% @matiere.posts.order("created_at DESC").each do |post| %>

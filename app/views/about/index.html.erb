@@ -1,0 +1,80 @@
+<% provide(:title, "about") %>
+
+<div class="container" style="padding-top: 150px;">
+	<div class="row">
+		<div class="col-md-8">		
+            <h5>Univercours essaie de regrouper les cours, les tds, les ccs et les examens des écoles universitaires tel que Fst et ENCG pour faciliter le parcours des étudiants.</h5>
+            <h5>Si vous voulez nous aider, vous pouvez nous contacter.</h5>
+		</div>
+		<div class="col-md-4">
+            <div class="socials">
+                <a href="https://www.facebook.com/univercourscom/" target="_blank"><i class="fa fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+            </div>
+            <% Post.last(10).each do |post| %>
+                <div class="col-md-12 col-sm-12 col-xs-12 gallery-grid mix <%= post.category.name.last(6) %>" style="padding: 0px 50px 0px 50px;">
+                    <%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
+                    <p style="margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+
+
+<section id="contact" class="footer_widget" style="margin-top: 30px"> 
+<div class="container">
+    <div class="row">
+        <div class="main_widget">
+
+
+            <div class="row">
+
+                <div class="col-sm-4  col-xs-12">
+                    <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+                        <ul>
+                            <li><a href=""><i class="fa fa-envelope"></i> univercours.info@gmail.com</a></li>
+                            <li><a href=""><i class="fa fa-phone"></i> 0123 456 789 0112</a></li>
+                            <li><a href=""><i class="fa fa-map-marker"></i> Greenplatz Ben 29, Germany 60435</a></li>
+                            <li><a href=""><i class="fa fa-fax"></i> (0012) 654 356 445</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-xs-12">
+                    <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+                        <div class="fb-page" data-href="https://www.facebook.com/univercourscom/" data-tabs="timeline" data-height="330" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/univercourscom/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/univercourscom/">Univercours</a></blockquote></div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-xs-12">
+                    <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+                        <div class="footer_logo">
+                            <img src="assets/images/footerlogo.png" alt="" />
+                        </div>
+                        <p>Univercours essaie de regrouper les cours, les tds, les ccs et les examens des écoles universitaires tel que Fst et ENCG pour faciliter le parcours des étudiants.</p>
+                        <p>Si vous voulez nous aider, vous pouvez nous contacter.</p>
+
+
+                        <a class="weblink" href="">https://univercours.com/</a>
+                        <div class="socials" style="margin-top: 30px">
+                            <a href="https://www.facebook.com/univercourscom/" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+</section>
+
