@@ -1,21 +1,12 @@
 <% provide(:title, "#{@post.name}") %>
 
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-7690261265789990",
-              enable_page_level_ads: true
-        });
-    </script>
-
-
 <div class="container" style="padding-top: 80px;">
 
 	
 
 	<div class="row">
 	
-		<div class="col-md-7">
+		<div class="col-md-8">
 			<h5 class="heading-agileinfo1 text-left">
 			<%= link_to deust_path(@deust) do %>
 				<%= @post.deust.name %> 
@@ -54,7 +45,7 @@
 
 
 		</div>
-		<div class="col-md-5 text-center">
+		<div class="col-md-4 text-center">
 		  	       <div class="portfolio_btn_area text-center">
 		  	       		<h5 style="font-family: 'Indie Flower', cursive;">Partagez la publication avec vous amis</h5>
 		  	       		<%= social_share_button_tag('Share to Facebook', :url => deust_matiere_post_path(@deust, @matiere, @post), desc: @post.name) %>
@@ -65,17 +56,7 @@
 						<% end %>
 		            </div>
 					
-            <div class="fb-page" data-href="https://www.facebook.com/univercourscom/" data-tabs="timeline" data-height="430" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/univercourscom/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/univercourscom/">Univercours</a></blockquote></div>
-			<p class="gingfreccs" style="text-align: left; position: relative; left: 60px">by <a href="http://gingfreccs.pro/" target="_blank">ging freccs</a></p>
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- ad2 -->
-			<ins class="adsbygoogle"
-				style="display:inline-block;width:468px;height:60px"
-				data-ad-client="ca-pub-7690261265789990"
-				data-ad-slot="4731767602"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+
 			</div>
 	</div>
 	<% if @matiere.posts.count > 1 %>
