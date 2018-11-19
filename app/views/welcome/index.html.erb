@@ -32,7 +32,7 @@
                 <% if deust.matieres.presence %>
                     <h5 class="heading-agileinfo2 text-center"><%= deust.name %></h5>
                     <div class="row">
-                        <% deust.matieres.first(6).each do |matiere| %>
+                        <% deust.matieres.first(3).each do |matiere| %>
                             <div class="col-md-4 col-sm-6 col-xs-6 gallery-grid">
                             <%= link_to deust_matiere_path(deust, matiere) do %>
                                 <div class="grid effect-apollo"> 
@@ -46,7 +46,7 @@
                             </div>
                         <% end %>
                     </div>
-                    <div class="welcome-plus-link text-left">
+                    <div class="welcome-plus-link text-right">
                         <%= link_to "Tous les modules", deust %>    
                     </div>
             
@@ -61,7 +61,7 @@
             <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
             <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
             </div>
-            <% Post.last(8).each do |post| %>
+            <% Post.last(10).each do |post| %>
                 <div class="col-md-12 col-sm-12 col-xs-12 gallery-grid mix <%= post.category.name.last(6) %>" style="padding: 0px 50px 0px 50px;">
                     <%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
                     <p style="margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
