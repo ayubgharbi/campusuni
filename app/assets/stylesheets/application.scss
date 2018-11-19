@@ -6105,8 +6105,8 @@ nav.small .minilogo {
 }
 
 .post_image {
-    width: 160px;
-    height: 140px;
+    width: 100%;
+    height: 170px;
 }
 
 .welcome-plus-link {
@@ -6208,5 +6208,23 @@ footer {
     &:hover {
       color: $blue;
     }
+  }
+  .matiere-home-name {
+    color: $blue;
+  }
+}
+
+
+.home-deusts {
+  margin-top: 100px !important;
+}
+
+.socials {
+  text-align: center;
+  margin-bottom: 30px;
+  a {
+    font-size: 25px;
+    color: $blue;
+    margin-right: 20px;
   }
 }

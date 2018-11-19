@@ -1,93 +1,75 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <% @posts.each do |post| %>
+                
+                    <%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
+                        <div class="post-home">
+                        <div class="row">
+                        
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <%= image_tag post.matiere.image.url(:large), class: "post_image" %>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-xs-8">
+                            <h5 class="post-home-name"><%= post.name %> </h5>
+                            <h5 class="matiere-home-name"><%= post.matiere.name %> </h5>
+                            <h5><%= post.deust.name %> - <%= post.matiere.semester.name %><h5/>
+                        </div>
 
-        <div class="container">
-
-
-
-
-<div class="row">
-<div class="col-md-8">
-
-<div class="row">
-<br>
-<br>
-<br>
-<br>
-<br>
-<% @posts.each do |post| %>
-  <div class="col-md-12 col-sm-12 col-xs-12 gallery-grid mix <%= post.category.name.last(6) %>" style="padding: 0px 50px 0px 50px;">
-    <%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
-        <div class="post-home">
-        <div class="row">
-        
-        <div class="col-md-3 col-sm-3 col-xs-3">
-            <%= image_tag post.matiere.image.url(:large), class: "post_image" %>
-        </div>
-        <div class="col-md-6 col-sm-3 col-xs-3">
-            <h5 class="post-home-name"><%= post.name %></h5>
-            <p style="font-weight: bold"><%= post.deust.name %> - <%= post.matiere.semester.name %></p>
-        </div>
-
-        </div>
-        </div>
-    <% end %>
-  </div>
-<% end %>
-<%= will_paginate @posts %>
-</div>
-
-
-<section class="deusts" id="deusts">
-<div class="container text-center">
-
-    <% @deusts.each do |deust| %>
-
-        <% if deust.matieres.presence %>
-        
-       
-        <h5 class="heading-agileinfo2 text-center"><%= deust.name %></h5>
-                <div class="row">
-                    <% deust.matieres.first(4).each do |matiere| %>
-                        <div class="col-md-3 col-sm-6 col-xs-6 gallery-grid">
-                          <%= link_to deust_matiere_path(deust, matiere) do %>
-                            <div class="grid effect-apollo"> 
-                              <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
-                              <div class="figcaption">
-                                <p style="font-size: 20px;"><%= matiere.name %></p>
-                              </div> 
-                            </div> 
-                          <% end %> 
-                          <p style="font-size: 14px;"><%= matiere.name %></p>
+                        </div>
                         </div>
                     <% end %>
-                </div>
-
-            <div class="welcome-plus-link text-left">
-                <%= link_to "Tous les modules", deust %>    
-            </div>
-            
-        <% end %>
-    <% end %>  
-</div>
-</section>
-</div>
-<div class="col-md-4" style="margin-top: 150px">
-
-<a href="https://www.facebook.com/univercourscom/" target="_blank"><i class="fa fa-facebook"></i></a>
-<a href="https://www.facebook.com/univercourscom/" target="_blank"><i class="fa fa-instagram"></i></a>
-<a href="https://www.facebook.com/univercourscom/" target="_blank"><i class="fa fa-twitter"></i></a>
-<a href="https://www.facebook.com/univercourscom/" target="_blank"><i class="fa fa-youtube"></i></a>
-
-        <p style="font-weight: bold">derniers publications</p>
-        <% Post.last(8).each do |post| %>
-          <div class="col-md-12 col-sm-12 col-xs-12 gallery-grid mix <%= post.category.name.last(6) %>" style="padding: 0px 50px 0px 50px;">
-            <%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
-              <p style="margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
             <% end %>
-          </div>
-        <% end %>
-</div>
-</div>
-
+            <%= will_paginate @posts %>
+            
+            <div class="home-deusts">
+            <% @deusts.each do |deust| %>
+                <% if deust.matieres.presence %>
+                    <h5 class="heading-agileinfo2 text-center"><%= deust.name %></h5>
+                    <div class="row">
+                        <% deust.matieres.first(6).each do |matiere| %>
+                            <div class="col-md-4 col-sm-6 col-xs-6 gallery-grid">
+                            <%= link_to deust_matiere_path(deust, matiere) do %>
+                                <div class="grid effect-apollo"> 
+                                <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
+                                <div class="figcaption">
+                                    <p style="font-size: 20px;"><%= matiere.name %></p>
+                                </div> 
+                                </div> 
+                            <% end %> 
+                            <p style="font-size: 14px;"><%= matiere.name %></p>
+                            </div>
+                        <% end %>
+                    </div>
+                    <div class="welcome-plus-link text-left">
+                        <%= link_to "Tous les modules", deust %>    
+                    </div>
+            
+                <% end %>
+            <% end %>  
+            </div>
+        </div>
+        <div class="col-md-4" style="margin-top: 150px">
+            <div class="socials">
+            <a href="https://www.facebook.com/univercourscom/" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+            </div>
+            <% Post.last(8).each do |post| %>
+                <div class="col-md-12 col-sm-12 col-xs-12 gallery-grid mix <%= post.category.name.last(6) %>" style="padding: 0px 50px 0px 50px;">
+                    <%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
+                    <p style="margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    </div>
 </div>
 
 
