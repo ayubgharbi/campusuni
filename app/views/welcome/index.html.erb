@@ -59,8 +59,8 @@
        
         <h5 class="heading-agileinfo2 text-center"><%= deust.name %></h5>
                 <div class="row">
-                    <% deust.matieres.first(6).each do |matiere| %>
-                        <div class="col-md-4 col-sm-6 col-xs-6 gallery-grid">
+                    <% deust.matieres.first(8).each do |matiere| %>
+                        <div class="col-md-3 col-sm-4 col-xs-4 gallery-grid">
                           <%= link_to deust_matiere_path(deust, matiere) do %>
                             <div class="grid effect-apollo"> 
                               <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
