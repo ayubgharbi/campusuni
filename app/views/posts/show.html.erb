@@ -26,6 +26,13 @@
             <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
             <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
             </div>
+            <% @post.deust.posts.last(10).each do |post| %>
+                <div class="col-md-12 col-sm-12 col-xs-12 gallery-grid mix <%= post.category.name.last(6) %>" style="padding: 0px 50px 0px 50px;">
+                    <%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
+                    	<p style="margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
+                    <% end %>
+                </div>
+            <% end %>
         </div>
 	</div>
 	<% if @matiere.posts.count > 1 %>
