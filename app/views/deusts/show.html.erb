@@ -41,12 +41,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4" style="margin-top: 150px">
-                <div class="socials">
-                <a href="https://www.facebook.com/univercourscom/" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+            <div class="col-md-4" style="margin-top: 80px">
+                <div class="portfolio_btn_area text-center">
+                    <h5 style="font-family: 'Indie Flower', cursive;">Partagez Univercours avec vous amis</h5>
+                    <%= social_share_button_tag('Share to Facebook', :url => root_path) %>
+                    <%= link_to "retour", root_path, class: "btn btn-md" %>
                 </div>
                 <% @deust.posts.last(10).each do |post| %>
                     <div class="col-md-12 col-sm-12 col-xs-12 gallery-grid mix <%= post.category.name.last(6) %>" style="padding: 0px 50px 0px 50px;">

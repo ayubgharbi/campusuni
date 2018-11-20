@@ -1,17 +1,16 @@
 <% provide(:title, "about") %>
 
-<div class="container" style="padding-top: 150px;">
+<div class="container">
 	<div class="row">
-		<div class="col-md-8">		
+		<div class="col-md-8" style="padding-top: 150px;">		
             <h5>Univercours essaie de regrouper les cours, les tds, les ccs et les examens des écoles universitaires tel que Fst et ENCG pour faciliter le parcours des étudiants.</h5>
             <h5>Si vous voulez nous aider, vous pouvez nous contacter.</h5>
 		</div>
-		<div class="col-md-4">
-            <div class="socials">
-                <a href="https://www.facebook.com/univercourscom/" target="_blank"><i class="fa fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fa fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
+		<div class="col-md-4" style="padding-top: 80px;">
+            <div class="portfolio_btn_area text-center">
+                <h5 style="font-family: 'Indie Flower', cursive;">Partagez Univercours avec vous amis</h5>
+                <%= social_share_button_tag('Share to Facebook', :url => root_path) %>
+                <%= link_to "retour", root_path, class: "btn btn-md" %>
             </div>
         </div>
     </div>
