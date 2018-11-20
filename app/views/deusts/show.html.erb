@@ -44,7 +44,7 @@
             <div class="col-md-4" style="margin-top: 80px">
                 <div class="portfolio_btn_area text-center">
                     <h5 style="font-family: 'Indie Flower', cursive;">Partagez Univercours avec vous amis</h5>
-                    <%= social_share_button_tag('Share to Facebook', :url => root_path) %>
+                    <%= social_share_button_tag('Share to Facebook', :url => "https://univercours.com/") %>
                     <%= link_to "retour", root_path, class: "btn btn-md" %>
                 </div>
                 <% @deust.posts.last(10).each do |post| %>
