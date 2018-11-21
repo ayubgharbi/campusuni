@@ -5,6 +5,8 @@ Rails.application.routes.draw do
  # devise_for :admins
   get 'welcome/index'
   get 'about/index'
+  get 'contact/index'
+  get 'privacy/index'
 
   root to: "welcome#index"
 
