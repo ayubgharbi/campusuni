@@ -1,0 +1,33 @@
+<div class="container" style="margin-top: 100px;">
+    <%= link_to "New Deust", new_deust_path, class: "admin-blue-link", target: '_blank' %>
+    
+    <% Deust.all.each do |deust| %>
+        <div class="admin-deust">
+        <%= link_to deust do %>
+            <h5 class="heading-agileinfo2 text-center"><%= deust.name %></h5>
+            <%= link_to "+ new matiere", new_deust_matiere_path(deust), class: "admin-blue-link", target: '_blank' %>
+            <div class="row">
+                <% deust.matieres.all.each do |matiere| %>
+                    <div class="col-md-6">
+                    <%= link_to deust_matiere_path(deust, matiere) do %>
+                        <h4><%= matiere.name %></h4>
+                        <%= link_to "+ new post", new_deust_matiere_post_path(deust, matiere), class: "admin-green-link", target: '_blank' %>
+                        <% matiere.posts.all.each do |post| %>
+                            <div class="admin-post">
+                            <%= link_to deust_matiere_post_path(deust, matiere, post) do %>
+                                <h6><%= post.name %></h6>
+                                <% post.pdfs.all.each do |pdf| %>
+                                        <p><%= pdf.link %></p>
+                                <% end %>
+                                <%= link_to "+ new pdf", new_deust_matiere_post_pdf_path(deust, matiere, post), class: "admin-red-link", target: '_blank' %>
+                            <% end %> 
+                            </div>
+                        <% end %>
+                    <% end %>    
+                    </div>
+                <% end %>
+            </div>
+        <% end %>
+        </div>
+    <% end %>
+</div>

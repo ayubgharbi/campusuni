@@ -24,7 +24,7 @@ class DeustsController < ApplicationController
 
     respond_to do |format|
       if @deust.save
-        format.html { redirect_to root_path }
+        format.html { redirect_to admin_index_path }
         format.json { render :show, status: :created, location: @deust }
       else
         format.html { render :new }
@@ -36,7 +36,7 @@ class DeustsController < ApplicationController
   def update
     respond_to do |format|
       if @deust.update(deust_params)
-        format.html { redirect_to root_path }
+        format.html { redirect_to admin_index_path }
         format.json { render :show, status: :ok, location: @deust }
       else
         format.html { render :edit }
@@ -48,7 +48,7 @@ class DeustsController < ApplicationController
   def destroy
     @deust.destroy
     respond_to do |format|
-      format.html { redirect_to root_path }
+      format.html { redirect_to admin_index_path }
       format.json { head :no_content }
     end
   end

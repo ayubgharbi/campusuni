@@ -6231,3 +6231,44 @@ footer {
   }
 }
 
+.admin-deust {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  h4 {
+    color: black;
+  }
+}
+
+.admin-blue-link {
+  font-weight: bold;
+  color: $blue;
+  &:hover {
+    color: $blue;
+  }
+}
+
+.admin-green-link {
+  font-weight: bold;
+  color: $green !important;
+  &:hover {
+    color: $green;
+  }
+}
+
+.admin-red-link {
+  font-weight: bold;
+  color: red !important;
+  &:hover {
+    color: red;
+  }
+}
+
+.admin-post {
+  border: 2px solid $blue; 
+  padding: 5px;
+  margin-bottom: 5px;
+  h6 {
+    color: black;
+    font-weight: bold;
+  }
+}
