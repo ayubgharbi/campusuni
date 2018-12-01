@@ -15,11 +15,15 @@
                         <% matiere.posts.all.each do |post| %>
                             <div class="admin-post">
                             <%= link_to deust_matiere_post_path(deust, matiere, post) do %>
-                                <h6><%= post.name %></h6>
+                                <h6><%= post.name %> <%= link_to "x", edit_deust_matiere_post_path(deust, matiere, post), class: "admin-green-link", target: '_blank' %></h6>
+                                <% if post.download_link.presence %>
+                                <p class="admin-green-link"><%= post.download_link %></p>
+                                <% end %>
+                                <%= link_to "+ new pdf", new_deust_matiere_post_pdf_path(deust, matiere, post), class: "admin-red-link", target: '_blank' %>
                                 <% post.pdfs.all.each do |pdf| %>
                                         <p><%= pdf.link %></p>
                                 <% end %>
-                                <%= link_to "+ new pdf", new_deust_matiere_post_pdf_path(deust, matiere, post), class: "admin-red-link", target: '_blank' %>
+                                
                             <% end %> 
                             </div>
                         <% end %>

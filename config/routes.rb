@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'contact/index'
   get 'privacy/index'
   get 'admin/index'
+  
 
   root to: "welcome#index"
 
@@ -17,16 +18,20 @@ Rails.application.routes.draw do
     delete 'logout' => :destroy
   end
   
-  resources :posts
+  resources :posts do 
+    get '/download', to: 'posts#download', :as => :download
+  end
   resources :deusts do 
     resources :semesters
   	resources :matieres do 
   		resources :posts do 
   		  resources :images 
         resources :pdfs
+        get '/download', to: 'posts#download', :as => :download
   		end
   	end
   end 
+  
 end
 
 

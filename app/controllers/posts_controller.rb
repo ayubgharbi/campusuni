@@ -2,7 +2,11 @@ class PostsController < ApplicationController
   before_action :set_deust
   before_action :set_matiere
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authorize, only: [:index, :show]
+  skip_before_action :authorize, only: [:index, :show, :download]
+
+  def download 
+    @post = Post.find(params[:post_id])
+  end
 
   def index
     @posts = Post.search(params[:name])
@@ -54,6 +58,8 @@ class PostsController < ApplicationController
     end
   end
 
+  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     
@@ -71,6 +77,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:name, :category_id)
+      params.require(:post).permit(:name ,:download_link, :category_id)
     end
 end

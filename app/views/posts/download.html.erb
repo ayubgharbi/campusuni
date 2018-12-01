@@ -1,4 +1,4 @@
-<% provide(:title, "#{@post.name}") %>
+<% provide(:title, "download") %>
 <div class="container" style="padding-top: 80px;">
 	<div class="row">
 		<div class="col-md-8">
@@ -23,16 +23,36 @@
 			<% end %></h5>
 	      	<h3 class="heading-agileinfo text-left"><%= @post.name %></h3>
 
-	      	<div class="text-left">
-				<% @post.pdfs.each do |pdf| %>
-					<iframe src=<%= pdf.link %> width="640" height="480"></iframe>
-				<% end %>
+				
 				<div class="text-center">
+				<div class="ad-frame">
+				<!-- text / image responsive -->
+				<ins class="adsbygoogle"
+					style="display:block"
+					data-ad-client="ca-pub-7690261265789990"
+					data-ad-slot="1471753835"
+					data-ad-format="auto"
+					data-full-width-responsive="true"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+				</div>
 					<% if @post.download_link.presence %>
-						<%= link_to "Télecharger", deust_matiere_post_download_path(@post.deust, @post.matiere, @post), target: "_blank", class: "btn btn-md" %>
+					<%= link_to "Télecharger", "#{@post.download_link}", target: "_blank", class: "btn btn-md" %>
 					<% end %>
-					</div>
-					</div>
+					<div class="ad-frame">
+				<!-- text / image responsive -->
+				<ins class="adsbygoogle"
+					style="display:block"
+					data-ad-client="ca-pub-7690261265789990"
+					data-ad-slot="1471753835"
+					data-ad-format="auto"
+					data-full-width-responsive="true"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+				</div>
+				</div>
 			  <!-- ad1 -->
                 <ins class="adsbygoogle"
                     style="display:block"
@@ -60,7 +80,7 @@
 				<%= social_share_button_tag('Share to Facebook', :url => deust_matiere_post_path(@deust, @matiere, @post), desc: @post.name) %>
 				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-				<%= link_to "retour", deust_matiere_path(@deust, @matiere), class: "btn btn-md" %>
+				<%= link_to "retour", deust_matiere_post_path(@deust, @matiere, @post), class: "btn btn-md" %>
 				<% if session[:user_id] %>
 					<%= link_to "nouveau pdf", new_deust_matiere_post_pdf_path(@deust, @matiere, @post), class: "btn btn-md" %>
 					<%= link_to "nouveau image", new_deust_matiere_post_image_path(@deust, @matiere, @post), class: "btn btn-md" %>
