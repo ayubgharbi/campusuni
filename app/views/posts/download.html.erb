@@ -37,7 +37,7 @@
 				</script>
 				</div>
 					<% if @post.download_link.presence %>
-					<%= link_to "Télecharger", "#{@post.download_link}", target: "_blank", class: "btn btn-md" %>
+					<%= link_to "Télecharger", "https://cutlinks.net/st?api=21ae135726823fd7a39a997b607fb5c0ed59297b&url=#{@post.download_link}", target: "_blank", class: "btn btn-md" %>
 					<% end %>
 					<div class="ad-frame">
 					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
