@@ -36,9 +36,11 @@
                                             <li><%= link_to 'Contact us', contact_index_path %></li>
                                             <li><%= link_to 'Privacy policy', privacy_index_path %></li>
                                             <% Deust.all.order("created_at ASC").each do |deust| %>
+                                                <% if deust.name != "Livres" %>
                                                 <li>
                                                     <%= link_to deust.name, deust_path(deust), class: "link" %>
                                                 </li>
+                                                <% end %>
                                             <% end %>
                                              <% if session[:user_id] %>
                                                 <li><%= link_to 'logout',   logout_path, method: :delete %></li>
