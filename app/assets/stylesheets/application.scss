@@ -24,6 +24,8 @@
 @import "arctic_admin/base";
 @import "social-share-button";
 
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic|Lora:400,400italic,700,700italic);
+
 
 $blue: #4267b2;
 $blue1: #0092F6;
@@ -35,6 +37,21 @@ $blue2: #002a32;
     font-family: "HelveticaRoundedLTStd-Bd";
     src: url(/assets/HelveticaRoundedLTStd-Bd.otf) format("truetype");
 }
+
+
+*{
+	font-family: Lora, sans-serif;
+}
+
+
+.subscribe-btn,
+.p-table > .header > .price > *,
+.menu > ul > li > a,
+.btn-minimal,
+h1, h2, h3, h4, h5, h6{
+	font-family: Roboto Mono, sans-serif;
+}
+
 
 
 @font-face {
@@ -58,7 +75,6 @@ $blue2: #002a32;
  
 
 #logo {
-    font-family: 'Indie Flower', cursive;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
@@ -68,7 +84,6 @@ $blue2: #002a32;
 
 
 .home-logo {
-    font-family: 'Indie Flower', cursive;
     color: black;
 }
 
@@ -139,10 +154,6 @@ Additional Styles (required)
 
 #myCarousel {
     margin-top: 30px;
-    font-family: 'Rubik', sans-serif;
-    p {
-    	font-family: 'Rubik', sans-serif;
-    }
 }
 
 .carousel-image {
@@ -238,7 +249,6 @@ body {
     padding: 0;
     margin-left: 0;
     margin-right: 0;
-    font-family: 'Rubik', sans-serif;
     font-weight: 300;
 }
 
@@ -311,7 +321,6 @@ p {
 
 }
 a{
-    font-family: 'Rubik', sans-serif;
     text-decoration: none !important;
 }
 .clear {
@@ -381,7 +390,6 @@ h5 {
 h1 {
     font-size: 4.375rem;
     line-height: 5.5rem;
-    font-family: 'Rubik', sans-serif;
     color:#fff;
 }
 h2 {
@@ -389,12 +397,10 @@ h2 {
     line-height: 3rem;
     margin-bottom: 35px;
     text-transform: uppercase;
-    font-family: 'Rubik', sans-serif;
 }
 h3 {
     font-size:1.875rem;
     line-height: 2.5rem;
-    font-family: 'Rubik', sans-serif;
     margin-bottom:35px;
     text-transform: uppercase;
 }
@@ -408,7 +414,6 @@ h5 {
     font-size: 1.125rem;
     margin-bottom: 1rem;
     color:#223d61;
-    font-family: 'Rubik', sans-serif;
     text-transform: uppercase;
 }
 h6 {
@@ -869,7 +874,6 @@ input::-ms-input-placeholder {
 .home{
     background: #fff;
     background-size: cover;
-    font-family: 'Rubik', sans-serif;
     color: #333;
     h1 {
         color: #333;
@@ -896,7 +900,6 @@ input::-ms-input-placeholder {
 .home .main_home p.subtitle{
     color: #5e9a28;
     padding-bottom: 25px;
-    font-family: 'Rubik', sans-serif;
     font-size:2.5rem;
     text-transform: uppercase;
 }
@@ -1304,12 +1307,10 @@ blockquote footer, blockquote small, blockquote .small {
     line-height: 0;
 }
 .counter .single_counter_right_area .single_counter_right p{
-    font-family: 'Rubik', sans-serif;
     color:#223d61;
 }
 
 .counter .single_counter_right_area .single_counter_right h4{
-    font-family: 'Rubik', sans-serif;
     color:#223d61;
 }
 
@@ -1829,7 +1830,6 @@ ul.thumbs li.content .close {
     color: #c2c2c2;
     cursor: pointer;
     font-weight: normal;
-    font-family: 'Rubik', sans-serif;
     font-size: 76px;
     line-height: 70px;
 }
@@ -4949,7 +4949,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .lnr {
-	font-family: 'Rubik', sans-serif;	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -5482,7 +5481,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   padding-bottom: 40px;
   position: relative;
   margin: 5px 0;
-  font-family: 'Rubik', sans-serif;
   font-size: 15px;
   line-height: 15px;
   font-weight: 400;
@@ -5509,7 +5507,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 } 
 .progress-number-wrapper,
 .progress-number-mark {
-  font-family: 'Rubik', sans-serif;
   font-size: 11px;
   line-height: 24px;
   height: 24px;
@@ -5546,7 +5543,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	margin-bottom: 20px;
 }
 .sonny_progressbar p.title {
-	font-family: 'Rubik', sans-serif;
 	font-size: 16px;
 	line-height: 20px;
 	margin: 0;
@@ -5593,7 +5589,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	border-bottom: 3px solid rgba(0,0,0,.2);
 }
 .sonny_progressbar .progress-percent {
-	font-family: 'Rubik', sans-serif;
 	font-size: 16px;
 	position: absolute;
 	right: 15px;
@@ -5630,31 +5625,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   100% { opacity:.01; }
 }
 
-nav {
-    background:#fff;
-    border-bottom:1px solid #ccc;
-    width:100%;
-    position:fixed;
-    top:0;
-    left:0;
-    z-index:10;
-    -webkit-transition:all .3s;
-    -moz-transition:all .3s;
-    transition:all .3s
-}
 
-nav .wrapper {
-    width:960px;
-    margin:0 auto
-}
-
-nav h1 {
-    margin:0;
-    padding:0;
-    line-height:36px;
-    font-size:36px;
-    margin-left:10px
-}
 
 .logo {
     float:left;
@@ -6042,7 +6013,6 @@ nav.small .minilogo {
     color: #FFF;
 }
 .w3l_header_left ul li a{
-    font-family: 'Indie Flower', cursive;
     color:#FFF;
     text-decoration:none;
 }
@@ -6114,7 +6084,6 @@ nav.small .minilogo {
     margin-top: 30px;
     margin-bottom: 50px;
     a {
-        font-family: 'Indie Flower', cursive;
         padding: 10px;
         background: #fff;
         border: 1px solid $blue;
@@ -6146,7 +6115,6 @@ nav.small .minilogo {
 
 .heading-agileinfo2 {
     text-align: center;
-    font-family: 'Indie Flower', cursive;
     width: 100px;
     padding: 5px;
     background: $blue;
@@ -6177,7 +6145,6 @@ footer {
 }
 
 .footer-deust {
-  font-family: "Rubik", sans-serif; 
   color: black !important;
   &:hover {
     color: $blue !important;
@@ -6282,4 +6249,128 @@ footer {
 .ad-frame1 {
   margin-bottom: 20px;
   margin-top: 30px;
+}
+
+.menu-btn{
+	position:fixed;
+	display:block;
+	top:25px;
+	right:25px;
+	text-decoration:none;
+	color:#FFF;
+	z-index:99;
+	padding:16px;
+	background:#202020;
+}
+.menu-btn > .lines{
+	display:block;
+	width:33px;
+	height:19px;
+	position:relative;
+}
+.menu-btn > .lines > span{
+	height:1px;
+	width:100%;
+	display:block;
+	background:#FFF;
+	position:absolute;
+	left:0;
+	-webkit-transition:all .3s ease;
+	-moz-transition:all .3s ease;
+	transition:all .3s ease;
+}
+.menu-btn > .lines > .l1{
+	top:0;
+}
+.menu-btn > .lines > .l2{
+	top:9px;
+}
+.menu-btn > .lines > .l3{
+	top:18px;
+}
+
+body.show-menu .menu-btn > .lines > .l2{
+	opacity:0;
+}
+body.show-menu .menu-btn > .lines > .l1,
+body.show-menu .menu-btn > .lines > .l3{
+	top:50%;
+	margin-top:-1px;
+}
+body.show-menu .menu-btn > .lines > .l1{
+	-webkit-transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-ms-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+	transform:rotate(45deg);
+}
+
+body.show-menu .menu-btn > .lines > .l3{
+	-webkit-transform:rotate(-45deg);
+	-moz-transform:rotate(-45deg);
+	-ms-transform:rotate(-45deg);
+	-o-transform:rotate(-45deg);
+	transform:rotate(-45deg);
+}
+
+
+
+.menu{
+	position:fixed;
+	z-index:99;
+	top:25px;
+	right:91px;
+	background:#202020;
+	height:51px;
+	line-height:51px;
+	color:#FFF;
+	padding:0 17px;
+	-webkit-transform:translateY(-15px);
+	-moz-transform:translateY(-15px);
+	-ms-transform:translateY(-15px);
+	-o-transform:translateY(-15px);
+	transform:translateY(-15px);
+	-webkit-transition:all .3s ease;
+	-moz-transition:all .3s ease;
+	transition:all .3s ease;
+	opacity:0;
+	visibility:hidden;
+}
+body.show-menu .menu{
+	opacity:1;
+	visibility:visible;
+	-webkit-transform:translateY(0);
+	-moz-transform:translateY(0);
+	-ms-transform:translateY(0);
+	-o-transform:translateY(0);
+	transform:translateY(0);
+}
+.menu > ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+	font-size:0;
+}
+.menu > ul > li{
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	margin:0 3px;
+}
+.menu > ul > li > a{
+	display:block;
+	font-size:12px;
+	font-weight:500;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	color:#FFF;
+	color:rgba(255,255,255,.6);
+	text-decoration:none;
+	-webkit-transition:all .3s ease;
+	-moz-transition:all .3s ease;
+	transition:all .3s ease;
+	padding:0 14px;
+}
+.menu > ul > li > a:hover{
+	color:#FFF;
 }

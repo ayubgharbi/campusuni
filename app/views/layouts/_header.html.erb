@@ -1,64 +1,29 @@
-
-
-
-
-    <header id="main_menu" class="header navbar-fixed-top">              
-            <div class="main_menu_bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="nave_menu">
-                            <nav class="navbar navbar-default" id="navmenu">
-                                <div class="container-fluid">
-                                    <!-- Brand and toggle get grouped for better mobile display -->
-                                    <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                        <%= link_to root_path, class: "navbar-brand" do %>
-                                            <h4 id="logo">univercours</h4>
-                                        <% end %>
-                                    </div>
-
-                                    <!-- Collect the nav links, forms, and other content for toggling -->
-
-
-
-                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                                     
-
-                                        <ul class="nav navbar-nav navbar-right">
-                                            <li><%= link_to 'Home', root_path %></li>
-                                            <li><%= link_to 'About us', about_index_path %></li>
-                                            <li><%= link_to 'Contact us', contact_index_path %></li>
-                                            <li><%= link_to 'Privacy policy', privacy_index_path %></li>
-                                            <% Deust.all.order("created_at ASC").each do |deust| %>
-                                                <% if deust.name != "Livres" %>
-                                                <li>
-                                                    <%= link_to deust.name, deust_path(deust), class: "link" %>
-                                                </li>
-                                                <% end %>
-                                            <% end %>
-                                             <% if session[:user_id] %>
-                                                <li><%= link_to 'logout',   logout_path, method: :delete %></li>
-                                            <% end %>
-                                        </ul>
-
-                                        <ul class="nav navbar-nav navbar-left">
-                
-                                        </ul>
-                                        
-                                    </div>
-
-                                </div>
-                            </nav>
-                        </div>  
-                    </div>
-
-                </div>
-
-            </div>
-        </header> 
+<!--menu-btn-->
+		<a href='#' class='menu-btn' >
+			<span class='lines' >
+				<span class='l1' ></span>
+				<span class='l2' ></span>
+				<span class='l3' ></span>
+			</span>
+		</a>
+		
+		
+		<!--menu-->
+		<nav class='menu' >
+			<ul>
+            <li><%= link_to 'Home', root_path %></li>
+            <li><%= link_to 'About us', about_index_path %></li>
+            <li><%= link_to 'Contact us', contact_index_path %></li>
+            <li><%= link_to 'Privacy policy', privacy_index_path %></li>
+            <% Deust.all.order("created_at ASC").each do |deust| %>
+                <% if deust.name != "Livres" %>
+                <li>
+                    <%= link_to deust.name, deust_path(deust), class: "link" %>
+                </li>
+                <% end %>
+            <% end %>
+             <% if session[:user_id] %>
+                <li><%= link_to 'logout',   logout_path, method: :delete %></li>
+            <% end %>
+			</ul>
+		</nav>

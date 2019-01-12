@@ -17,35 +17,37 @@
 //= require social-share-button
 //= require_tree .
 
+$(function(){
+	'use strict';
+	
 
+	
+	/*=========================================================================
+		Menu Functioning
+	=========================================================================*/
+	$('.menu-btn').on('click', function(e){
+		e.preventDefault();
+		$('body').toggleClass('show-menu');
+	});
+	
+	$('.menu > ul > li > a').on('click', function(){
+		var $offset = $( $(this).attr('href') ).offset().top;
+		$('body, html').animate({
+			scrollTop: $offset
+		}, 700);
+		$('body').removeClass('show-menu');
+	});
+	
+	
+	
 
-  jQuery(document).ready(function($) {
-
-    $('.dropdown-toggle').dropdown()   
-        $('#myCarousel').carousel({
-                interval: 5000
-        });
- 
-        $('#carousel-text').html($('#slide-content-0').html());
- 
-        //Handles the carousel thumbnails
-       $('[id^=carousel-selector-]').click( function(){
-            var id = this.id.substr(this.id.lastIndexOf("-") + 1);
-            var id = parseInt(id);
-            $('#myCarousel').carousel(id);
-        });
- 
- 
-        // When the carousel slides, auto update the text
-        $('#myCarousel').on('slid.bs.carousel', function (e) {
-                 var id = $('.item.active').data('slide-number');
-                $('#carousel-text').html($('#slide-content-'+id).html());
-        });
+	
 });
-
 
 (function() {
     "use strict";
+
+    
     
     $(document).ready(function() {
         /*-----------------------
