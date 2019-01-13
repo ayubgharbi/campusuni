@@ -33,7 +33,7 @@
                                 <div class="row">
                                     <% @matiere.posts.order("created_at DESC").each do |post| %>
                                         <div class="col-md-6 col-sm-6 col-xs-6">
-                                            <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
+                                            <%= link_to "https://cutlinks.net/st?api=564c5979947fe1df853e04687de94f1fb2064de1&url=#{deust_matiere_post_path(@deust, @matiere, post)}" do %>
                                                 <div class="post-home gallery-grid mix <%= post.category.name.last(6) %>">
                                                     <% if post.pdfs.presence %>
                                                         <iframe src=<%= post.pdfs.first.link %> width="240" height="240"></iframe>

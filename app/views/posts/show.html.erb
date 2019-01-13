@@ -29,7 +29,7 @@
 				<% end %>
 				<div class="text-center">
 					<% if @post.download_link.presence %>
-						<%= link_to "Télecharger", deust_matiere_post_download_path(@post.deust, @post.matiere, @post), target: "_blank", class: "btn btn-md" %>
+						<%= link_to "Télecharger", "https://cutlinks.net/st?api=564c5979947fe1df853e04687de94f1fb2064de1&url=#{deust_matiere_post_download_path(@post.deust, @post.matiere, @post)}", target: "_blank", class: "btn btn-md" %>
 					<% end %>
 					</div>
 					</div>
