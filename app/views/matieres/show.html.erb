@@ -88,7 +88,7 @@
                 </div>
                 <% @matiere.posts.last(10).each do |post| %>
                     <div class="col-md-12 col-sm-12 col-xs-12 gallery-grid mix <%= post.category.name.last(6) %>" style="padding: 0px 50px 0px 50px;">
-                        <%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
+                        <%= link_to "https://cutlinks.net/st?api=564c5979947fe1df853e04687de94f1fb2064de1&url=univercours.com#{deust_matiere_post_path(post.deust, post.matiere, post)}" do %>
                         <p style="margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
                         <% end %>
                     </div>
