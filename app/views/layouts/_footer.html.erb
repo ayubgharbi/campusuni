@@ -1,13 +1,60 @@
-<footer id="footer" class="footer">
-<div class="container">
-    <div class="main_footer">
-        <div class="row">
-            <div class="col-sm-6 col-xs-12">
-                <div class="copyright_text">
-                    <p class=" wow fadeInRight" data-wow-duration="1s">Made by <a href="http://gingfreccs.pro/" target="_blank">Ging Freccs</a> 2018 &copy; All Rights Reserved</p>
-                </div>
-            </div>
-        </div>
+
+<!-- Contact Section -->
+<div id="contact" class="text-center">
+  <div class="container text-center">
+    <div class="col-md-3"></div>                    
+    <div class="col-md-6">
+      <h3>À propos de nous</h3>
+      <div class="contact-item">
+        <p>Univercours essaie de regrouper les cours, les tds, les ccs et les examens des écoles universitaires tel que Fst et ENCG pour faciliter le parcours des étudiants.</p>
+      </div>
     </div>
+    <div class="col-md-3"></div> 
+  </div>
+  <div class="container">
+    <div class="section-title text-center">
+      <h3>Envoyez-nous un message</h3>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <form name="sentMessage" id="contactForm" novalidate>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control" placeholder="Name" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="email" id="email" class="form-control" placeholder="Email" required="required">
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+          <p class="help-block text-danger"></p>
+        </div>
+        <div id="success"></div>
+        <%= link_to "Contactez-nous", "#",  class: "btn btn-custom" %>
+      </form>
+    </div>
+  </div>
 </div>
-</footer>
+<div id="footer">
+  <div class="container text-center">
+    <div class="col-md-6">
+      <p>&copy; 2019 Univercours. All rights reserved. Design by Ayoub Gharbi</p>
+    </div>
+    <div class="col-md-6">
+      <div class="social">
+        <ul>
+          <li><a href="https://www.facebook.com/univercourscom/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCNJYbuyj0fkrb4u8v0Oifcw" target="_blank"><i class="fa fa-youtube"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

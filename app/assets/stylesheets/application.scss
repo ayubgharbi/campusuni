@@ -39,7 +39,7 @@ $blue2: #002a32;
 }
 
 *{
-	font-family: Lora, sans-serif;
+	font-family: 'Raleway', sans-serif;
 }
 
 @font-face {
@@ -47,33 +47,6 @@ $blue2: #002a32;
     src: url(/assets/FreightSansBold.otf) format("truetype");
 }
 
-.logo-img {
-	width: 35px;
-	height: 35px;
-    position: relative;
-    bottom: 7px;
-}
-
-.tjf {
-    width: 45px;
-    height: 45px;
-    position: relative;
-    top: 2px;
-}
- 
-
-#logo {
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    position: relative;
-    bottom: 15px;
-}
-
-
-.home-logo {
-    color: black;
-}
 
 /*#####################
 Additional Styles (required)
@@ -5616,8 +5589,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 .logo {
-    float:left;
-    
+  margin-bottom: 30px;
+  width: 250px;    
 }
 
 .nav-top {
@@ -6068,22 +6041,6 @@ nav.small .minilogo {
     height: 170px;
 }
 
-.welcome-plus-link {
-    margin-top: 30px;
-    margin-bottom: 50px;
-    a {
-        padding: 10px;
-        background: #fff;
-        border: 1px solid $blue;
-        color: $blue !important;
-        &:hover {
-            background: $blue;
-            color: #fff !important;     
-        };
-    }
-}
-
-
 .heading-agileinfo1 {
     margin-top: 30px;
     a {
@@ -6374,9 +6331,185 @@ body.show-menu .menu{
   margin-bottom: 20px !important;
 }
 
-.index-posts {
-  margin-bottom: 30px;
-  p {
+/* Contact Section */
+#contact {
+	padding: 100px 0;
+  background: $blue;
+  margin-top: 40px;
+}
+#contact .contact-item p {
+	font-size: 15px;
+	color: #fff;
+}
+#contact .section-title {
+	margin-top: 60px;
+	margin-bottom: 40px;
+}
+#contact form {
+	padding: 0;
+}
+#contact h3 {
+	position: relative;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 400;
+	color: #fff;
+	padding: 20px 0;
+}
+#contact h3::after {
+	position: absolute;
+	content: "";
+	background: #d43031;
+	height: 2px;
+	width: 40px;
+	bottom: 0;
+	margin-left: -20px;
+	left: 50%;
+}
+#contact .text-danger {
+	color: #cc0033;
+	text-align: left;
+}
+label {
+	font-size: 12px;
+	font-weight: 400;
+	font-family: 'Open Sans', sans-serif;
+	float: left;
+}
+#contact .form-control {
+	display: block;
+	width: 100%;
+	padding: 6px 12px;
+	font-size: 16px;
+	line-height: 1.42857143;
+	color: #fff;
+	background-color: rgba(255,255,255,.2);
+	background-image: none;
+	border: 0;
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: none;
+	-o-transition: none;
+	transition: none;
+}
+#contact .form-control:focus {
+	border-color: #999;
+	outline: 0;
+	-webkit-box-shadow: transparent;
+	box-shadow: transparent;
+}
+.form-control::-webkit-input-placeholder {
+color: #fff;
+}
+.form-control:-moz-placeholder {
+color: #fff;
+}
+.form-control::-moz-placeholder {
+color: #fff;
+}
+.form-control:-ms-input-placeholder {
+color: #fff;
+}
+#contact .contact-item {
+	margin: 20px 0 40px 0;
+}
+#contact .contact-item span {
+	font-weight: 400;
+	color: #fff;
+	text-transform: uppercase;
+	margin-bottom: 6px;
+	display: inline-block;
+}
+/* Footer Section*/
+#footer {
+	background: #262626;
+	padding: 40px 0 20px 0;
+}
+#footer .social {
+	margin-top: -5px;
+	text-align: right;
+}
+#footer .social ul li {
+	display: inline-block;
+	margin: 0 15px;
+}
+#footer .social i.fa {
+	font-size: 24px;
+	padding: 4px;
+	color: #888;
+	transition: all 0.3s;
+}
+#footer .social i.fa:hover {
+	color: #eee;
+}
+#footer p {
+	font-size: 14px;
+	color: #666;
+}
+#footer a {
+	color: #999;
+}
+#footer a:hover {
+	color: #eee;
+}
+
+.btn-custom {
+	text-transform: uppercase;
+	color: #fff !important;
+	border: 2px solid #fff;
+	padding: 14px 20px;
+  margin: 0;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	border-radius: 0;
+	margin-top: 20px;
+  transition: all 0.3s;
+  &:hover {
+    color: #fff;
+	  border: 2px solid #d43031;
+    background-color: #d43031 !important;
+    background: #d43031;
+  }
+}
+
+.btn-login {
+    input {
+      color: #fff !important;
+      background-color: transparent !important;
+      border: 2px solid #fff;
+      padding: 14px 20px;
+      margin: 0;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      border-radius: 0;
+      margin-top: 20px;
+      transition: all 0.3s;
+    }
+}
+
+.welcome-plus-link {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  a {
+    text-transform: uppercase;
     color: $blue;
+    border: 1px solid $blue;
+    padding: 14px 20px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-radius: 0;
+    margin-top: 20px;
+    transition: all 0.3s;
+    &:hover {
+      color: #fff;
+      border: 1px solid $blue;
+      background-color: F$blue !important;
+      background: $blue;
+    }
   }
 }

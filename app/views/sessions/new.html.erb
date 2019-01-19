@@ -1,13 +1,12 @@
-<div class="container" style="padding-top: 220px;">
+<div class="container" style="padding-top: 120px;">
 	
 <div class="col-md-6 col-md-offset-3">
 	<% if flash[:alert] %>
 	<p id="notice"><%= flash[:alert] %></p>
 	<% end %>
-
 	<%= form_tag do %>
 		<fieldset>
-		<legend>Please Log In</legend>
+		<legend>Se connecter</legend>
 
 
 		
@@ -21,7 +20,9 @@
 		<%= password_field_tag :password, params[:password] %>
 		</div>
 		<div>
-		<%= submit_tag "Login" %>
+		<div class="btn-login">
+		<%= submit_tag "se connecter" %>
+		</div>
 		</div>
 		</fieldset>
 	<% end %>
