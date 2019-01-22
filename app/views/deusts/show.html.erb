@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8" >
-            <div id="lab" class="w3ls-section gallery">
+            <div id="lab" class="w3ls-section gallery text-center">
                 <h5 class="heading-agileinfo2"><%= @deust.name %></h5>
                 <div class="main_mix_menu">
                     <ul>
@@ -23,7 +23,13 @@
                                     <% matieres.each do |matiere| %>
                                         <div class="col-sm-4 col-xs-6 gallery-grid mix <%= matiere.semester.name.last(6) %>">
                                             <%= link_to deust_matiere_path(@deust, matiere) do %>
-                                                <p class="module-name"><%= matiere.name %></p>
+                                                <div class="grid effect-apollo"> 
+                                                    <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
+                                                    <div class="figcaption">
+                                                        <p style="font-size: 20px;"><%= matiere.name %></p>							
+                                                    </div> 
+                                                </div> 
+                                                <p class="module-name"><%= matiere.name %></p>	
                                             <% end %>
                                         </div>
                                     <% end %>
