@@ -996,7 +996,7 @@ input::-ms-input-placeholder {
     margin-bottom:50px;
 }
 .main_mix_menu ul li.btn{
-    min-width:150px;
+    min-width:120px;
     height:35px;
     padding: .2rem;
     border:1px solid #ddd;
@@ -6037,11 +6037,8 @@ nav.small .minilogo {
     text-align: center;
     width: 100px;
     padding: 5px;
-    background: $blue;
-    border: 1px solid #fff;
+    background: #333;
     color: #fff; 
-    margin-top: 30px;
-    border-radius: 3px;
 }
 .navbar-brand {
     margin-bottom: 15px;
@@ -11320,7 +11317,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
       text-transform: none;
       font-weight: 400;
       letter-spacing: 0px;
-      margin-bottom: 10px;
+      margin-bottom: 10px !important;
       cursor: pointer;
       color: #fff; 
       min-height: 100px;
