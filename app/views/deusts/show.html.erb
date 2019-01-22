@@ -1,101 +1,43 @@
 <% provide(:title, "#{@deust.name}") %>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8" >
-
-                <div id="lab" class="w3ls-section gallery">
-                <!-- ad1 -->
-                <ins class="adsbygoogle"
-                    style="display:block"
-                    data-ad-client="ca-pub-7690261265789990"
-                    data-ad-slot="8002102239"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                    <h5 class="heading-agileinfo2"><%= @deust.name %></h5>
-                    <div class="main_mix_menu">
-                        <ul>
-                            <li class="btn btn-primary filter" data-filter="all" style="border-radius: 0px;">tous</li>
-                            <% @semesters.each do |semester| %>
-                                <li data-filter=".<%= semester.name.last(6) %>" class="btn btn-primary filter" style="border-radius: 0px;"><%= semester.name %></li>
-                            <% end %> 
-                        </ul>
-                    </div>
-                    <div id="mixcontent" class="mixcontent">
-                        <div class="gallery-grids">
-                            <% if session[:user_id] %>
-                                <%= link_to "Nouveau matiere", new_deust_matiere_path(@deust) %>
-                            <% end %>
-                            <% @deust.semesters.each do |semester| %>
-                                <% semester.matieres.each_slice(3) do |matieres| %>
-                                    <div class="row">
-                                        <% matieres.each do |matiere| %>
-                                            <div class="col-sm-4 col-xs-6 gallery-grid mix <%= matiere.semester.name.last(6) %>">
-                                                <%= link_to deust_matiere_path(@deust, matiere) do %>
-                                                    <div class="grid effect-apollo"> 
-                                                        <%= image_tag matiere.image.url(:large), class: "gallery-image" %>
-                                                        <div class="figcaption">
-                                                            <p style="font-size: 20px;"><%= matiere.name %></p>
-                                                        </div> 
-                                                    </div> 
-
-                                                    <p><%= matiere.name %></p>
-                                                <% end %>
-                                            </div>
-                                        <% end %>
-                                    </div>
-                                <% end %>
-                            <% end %>     
-                        </div>
-                    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" >
+            <div id="lab" class="w3ls-section gallery text-center">
+                <h5 class="heading-agileinfo2"><%= @deust.name %></h5>
+                <div class="main_mix_menu">
+                    <ul>
+                        <li class="btn btn-primary filter" data-filter="all" style="border-radius: 0px;">tous</li>
+                        <% @semesters.each do |semester| %>
+                            <li data-filter=".<%= semester.name.last(6) %>" class="btn btn-primary filter" style="border-radius: 0px;"><%= semester.name %></li>
+                        <% end %> 
+                    </ul>
                 </div>
-                <!-- text / image responsive -->
-				<ins class="adsbygoogle"
-					style="display:block"
-					data-ad-client="ca-pub-7690261265789990"
-					data-ad-slot="1471753835"
-					data-ad-format="auto"
-					data-full-width-responsive="true"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
-            </div>
-            <div class="col-md-4" style="margin-top: 80px">
-                <!-- ad1 -->
-                <ins class="adsbygoogle"
-                    style="display:block"
-                    data-ad-client="ca-pub-7690261265789990"
-                    data-ad-slot="8002102239"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                <div class="portfolio_btn_area text-center">
-                    <%= link_to "retour", root_path, class: "btn btn-md" %>
-                </div>
-                <div class="ad-unit1">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- text-ads-only -->
-                <ins class="adsbygoogle"
-                    style="display:block"
-                    data-ad-client="ca-pub-7690261265789990"
-                    data-ad-slot="1903118154"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                </div>
-                <% @deust.posts.last(10).each do |post| %>
-                    <div class="col-md-12 col-sm-12 col-xs-12 gallery-grid mix <%= post.category.name.last(6) %>" style="padding: 0px 50px 0px 50px;">
-                        <%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
-                        <p style="margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
+                <div id="mixcontent" class="mixcontent">
+                    <div class="gallery-grids">
+                        <% if session[:user_id] %>
+                            <%= link_to "Nouveau matiere", new_deust_matiere_path(@deust) %>
                         <% end %>
+                        <% @deust.semesters.each do |semester| %>
+                            <% semester.matieres.each_slice(3) do |matieres| %>
+                                <div class="row">
+                                    <% matieres.each do |matiere| %>
+                                        <div class="col-sm-4 col-xs-6 gallery-grid mix <%= matiere.semester.name.last(6) %>">
+                                            <%= link_to deust_matiere_path(@deust, matiere) do %>
+                                                <p class="module-name"><%= matiere.name %></p>
+                                            <% end %>
+                                        </div>
+                                    <% end %>
+                                </div>
+                            <% end %>
+                        <% end %>     
                     </div>
-                <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="margin-top: 80px">
+            <div class="portfolio_btn_area text-center">
+                <%= link_to "retour", root_path, class: "btn btn-md" %>
             </div>
         </div>
     </div>
+</div>

@@ -6042,6 +6042,7 @@ nav.small .minilogo {
     color: #fff; 
     margin-top: 30px;
     border-radius: 3px;
+    margin: auto;
 }
 .navbar-brand {
     margin-bottom: 15px;
@@ -11314,3 +11315,19 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
   }
 }
 
+.module-name {
+  padding: 25px;
+      line-height: 24px;
+      text-transform: none;
+      font-weight: 400;
+      letter-spacing: 0px;
+      margin-bottom: 0;
+      cursor: pointer;
+      border-bottom: solid 1px #e0e0e0;
+      color: #fff; 
+      background-color: $blue;
+      &:hover {
+        color: #fff;
+        background: #333;
+      }
+}
