@@ -2,17 +2,6 @@
 <div class="container" style="padding-top: 80px;">
 	<div class="row">
 		<div class="col-md-8">
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- text ad -->
-		<ins class="adsbygoogle"
-			 style="display:block"
-			 data-ad-client="ca-pub-7690261265789990"
-			 data-ad-slot="2631672705"
-			 data-ad-format="auto"
-			 data-full-width-responsive="true"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
 			<h5 class="heading-agileinfo1 text-left">
 			<%= link_to deust_path(@deust) do %>
 				<%= @post.deust.name %> 
@@ -22,76 +11,37 @@
 				<%= @post.matiere.name %>
 			<% end %></h5>
 	      	<h3 class="heading-agileinfo text-left"><%= @post.name %></h3>
-
 	      	<div class="text-left">
 				<% @post.pdfs.each do |pdf| %>
 					<iframe src=<%= pdf.link %> width="640" height="480"></iframe>
 				<% end %>
 				<div class="text-center">
 					<% if @post.download_link.presence %>
-						<%= link_to "Télecharger", "https://cutlinks.net/st?api=564c5979947fe1df853e04687de94f1fb2064de1&url=univercours.com#{deust_matiere_post_download_path(@post.deust, @post.matiere, @post)}", target: "_blank", class: "btn btn-md" %>
+						<%= link_to "Télecharger", deust_matiere_post_download_path(@post.deust, @post.matiere, @post), target: "_blank", class: "btn btn-md" %>
 					<% end %>
-					</div>
-					</div>
-			  <!-- ad1 -->
-                <ins class="adsbygoogle"
-                    style="display:block"
-                    data-ad-client="ca-pub-7690261265789990"
-                    data-ad-slot="8002102239"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            	</script>
+				</div>
+			</div>
 		</div>
 		<div class="col-md-4 text-center">
 			<div class="portfolio_btn_area text-center">
-				<!-- text / image responsive -->
-				<ins class="adsbygoogle"
-					style="display:block"
-					data-ad-client="ca-pub-7690261265789990"
-					data-ad-slot="1471753835"
-					data-ad-format="auto"
-					data-full-width-responsive="true"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
 				<%= link_to "retour", deust_matiere_path(@deust, @matiere), class: "btn btn-md" %>
 				<% if session[:user_id] %>
 					<%= link_to "nouveau pdf", new_deust_matiere_post_pdf_path(@deust, @matiere, @post), class: "btn btn-md" %>
 					<%= link_to "nouveau image", new_deust_matiere_post_image_path(@deust, @matiere, @post), class: "btn btn-md" %>
 				<%	 end %>
 			</div>
-			<div class="ad-unit1">
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- text-ads-only -->
+			<div class="ad-unit">
+			<!-- text / image responsive -->
 			<ins class="adsbygoogle"
-				 style="display:block"
-				 data-ad-client="ca-pub-7690261265789990"
-				 data-ad-slot="1903118154"
-				 data-ad-format="auto"
-				 data-full-width-responsive="true"></ins>
+				style="display:block"
+				data-ad-client="ca-pub-7690261265789990"
+				data-ad-slot="1471753835"
+				data-ad-format="auto"
+				data-full-width-responsive="true"></ins>
 			<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>
             </div>
-			<% @post.deust.posts.last(10).each do |post| %>
-				<div class="col-md-12 col-sm-12 col-xs-12 gallery-grid mix <%= post.category.name.last(6) %>" style="padding: 0px 50px 0px 50px;">
-					<%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
-					<p style="margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-					<% end %>
-				</div>
-			<% end %>
 		</div>
     </div>
-	<% if @matiere.posts.count > 1 %>
-      	<h5 style="margin-top: 20px"><%= @post.matiere.name %></h5>
-		<% @matiere.posts.order("created_at DESC").each do |post| %>
-			<% if post.name != @post.name %>
-		        <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
-		            <p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-		        <% end %>
-		    <% end %>
-        <% end %>
-    <% end %>
 </div>
