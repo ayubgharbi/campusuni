@@ -13,7 +13,7 @@
 	      	<h3 class="heading-agileinfo text-left"><%= @post.name %></h3>
 	      	<div class="text-left">
 				<% @post.pdfs.each do |pdf| %>
-					<iframe src=<%= pdf.link %> width="640" height="480"></iframe>
+					<iframe src=<%= pdf.link %> width="650" height="500"></iframe>
 				<% end %>
 				<div class="text-center">
 					<% if @post.download_link.presence %>
