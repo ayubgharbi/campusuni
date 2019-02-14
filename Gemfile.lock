@@ -167,6 +167,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
+    particles-js-rails (2.0.0)
     prettyphoto-rails (0.2.1)
       jquery-rails
       rails (>= 3.1)
@@ -287,6 +288,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   paperclip (~> 5.1)
+  particles-js-rails (~> 2.0)
   prettyphoto-rails
   puma (~> 3.0)
   rails (~> 5.0.6)
