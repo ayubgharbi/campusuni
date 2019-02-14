@@ -29,7 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'friendly_id', '~> 5.1'
 gem 'social-share-button'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
-gem 'particles-js-rails', '~> 2.0'z
+gem 'particles-js-rails', '~> 2.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
