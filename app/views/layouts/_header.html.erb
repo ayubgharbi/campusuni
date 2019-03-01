@@ -1,5 +1,4 @@
 
-    
         <nav class="navbar navbar-default navbar-fixed white no-background bootsnav" style="background-color: transparent !important">
         <!-- Start Top Search -->
         <div class="top-search">
@@ -43,9 +42,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#brand">
-
-                </a>
+                <%= link_to "accueil", root_path, class: "btn btn-md " %>
             </div>
             <!-- End Header Navigation -->
 
@@ -71,29 +68,30 @@
 
     </nav>
 
+
     <!--menu-btn-->
-		<a href='#' class='menu-btn' >
-			<span class='lines' >
-				<span class='l1' ></span>
-				<span class='l2' ></span>
-				<span class='l3' ></span>
-			</span>
-		</a>
-		
-		
-		<!--menu-->
-		<nav class='menu' >
-			<ul>
-            <li><%= link_to 'Acceuil', root_path %></li>
-            <% Deust.all.order("created_at ASC").each do |deust| %>
-                <% if deust.name != "Livres" %>
-                <li>
-                    <%= link_to deust.name, deust_path(deust), class: "link" %>
-                </li>
-                <% end %>
+    <a href='#' class='menu-btn' >
+        <span class='lines' >
+            <span class='l1' ></span>
+            <span class='l2' ></span>
+            <span class='l3' ></span>
+        </span>
+    </a>
+    
+    
+    <!--menu-->
+    <nav class='menu' >
+        <ul>
+        <li><%= link_to 'Acceuil', root_path %></li>
+        <% Deust.all.order("created_at ASC").each do |deust| %>
+            <% if deust.name != "Livres" %>
+            <li>
+                <%= link_to deust.name, deust_path(deust), class: "link" %>
+            </li>
             <% end %>
-             <% if session[:user_id] %>
-                <li><%= link_to 'logout',   logout_path, method: :delete %></li>
-            <% end %>
-			</ul>
-		</nav>
+        <% end %>
+         <% if session[:user_id] %>
+            <li><%= link_to 'logout',   logout_path, method: :delete %></li>
+        <% end %>
+        </ul>
+    </nav>

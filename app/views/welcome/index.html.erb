@@ -2,20 +2,40 @@
 <!-- Home Section -->
 
 <section id="home" class="main-home parallax-section">
-     <div id="particles-js"></div>
-     <script src="particles.js"></script>
      <div class="container">
           <div class="row">
 
-               <div class="col-md-12 col-sm-12">
+               <div class="col-md-5 col-sm-5">
                     <h1>Univercours</h1>
-                    <h5>contient plus que <%= Post.count %> cours, tds et ccs pour vous</h5>
+                    <h6>contient plus que <%= Post.count %> cours, tds et ccs</h6>
                </div>
+               <div class="col-md-7 col-sm-7">
+                    <%= image_tag "home-bg.jpg" %>
+                </div>
 
           </div>
      </div>
 </section>
 
+<div class="container" style="margin-bottom:40px">
+<div class="row">
+
+    <% Deust.all.each do |deust| %>
+        <div class="col-md-3">
+            <h4 class="index-deust-name text-center"><%= deust.name %></h4> 
+       
+                <ul class="cart-list">
+                    <% deust.matieres.each do |matiere| %>
+                        <li>
+                            <a href="#" class="photo"><%= image_tag matiere.image.url(:thumb) %></a>
+                            <h6><%= link_to matiere.name, deust_matiere_path(matiere.deust, matiere) %></h6>
+                            </li>
+                    <% end %>
+                </ul>
+        </div>
+    <% end %>
+</div>
+</div>
 
 <section id="counter" class="counter">
 <div class="container-fluid">

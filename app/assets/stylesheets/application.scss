@@ -31,7 +31,7 @@ $blue: #4267b2;
 $blue1: #0092F6;
 $green: #5e9a28;
 $blue2: #002a32;
-
+$red : #cc0033;
 
 @font-face {
     font-family: "HelveticaRoundedLTStd-Bd";
@@ -11167,18 +11167,15 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
     text-align: center;
     font-family: 'Lora', serif;
     margin-bottom: 50px;
+    padding-top: 100px;
     h1 {
       color: $blue;
     }
-    h1,h2,h3,h4,h5,h6 {
-      font-style: normal;
-      font-weight: bold;
-      letter-spacing: 0.5px;
-    }
+
 }
 
 .main-home {
-  height: 100vh;
+  height: 50vh;
 }
 
 
@@ -11190,7 +11187,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
   left: 0;
 }
 
-#home h5 {
+#home h6 {
   color: #bfba55;
 }
 
@@ -11233,3 +11230,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
   overflow: hidden;
 }
 
+
+.index-deust-name {
+  color: $blue;
+}
