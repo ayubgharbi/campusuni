@@ -62,6 +62,14 @@
             <div class="portfolio_btn_area text-center">
                 <%= link_to "retour", deust_path(@deust), class: "btn btn-md" %>
             </div>
+            <ul class="cart-list">
+			<% @post.matiere.semester.matieres.each do |matiere| %>
+				<li>
+					<a href="#" class="photo"><%= image_tag matiere.image.url(:thumb) %></a>
+					<h6><%= link_to matiere.name, deust_matiere_path(matiere.deust, matiere) %></h6>
+					</li>
+			<% end %>
+			</ul>
         </div>
     </div>
 </div>
