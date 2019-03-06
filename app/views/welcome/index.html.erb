@@ -65,7 +65,7 @@
 <div class="container" style="margin-top:70px;">
     <div class="row">
         <% Deust.all.each do |deust| %>
-            <% if deust.name != Livres %>
+            <% if deust.name != "Livres" %>
             <h5 class="heading-agileinfo2"><%= deust.name %></h5>
             <div class="row">
                 <% deust.semesters.each do |semester| %>
