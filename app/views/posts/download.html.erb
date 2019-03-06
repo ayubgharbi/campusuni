@@ -37,7 +37,7 @@
 				</script>
 				</div>
 					<% if @post.download_link.presence %>
-					<%= link_to "Télecharger", "http://sh.st/st/8b96b1790166de37ed48f960e2d85b1c/#{@post.download_link}", target: "_blank", class: "btn btn-md" %>
+					<%= link_to "Télecharger", @post.download_link, target: "_blank", class: "btn btn-md" %>
 					<% end %>
 					<div class="ad-frame">
 					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -97,3 +97,34 @@
     </div>
 
 </div>
+
+
+
+
+<script type="text/javascript">//<![CDATA[ 
+(function() {
+    var configuration = {
+    "token": "8b96b1790166de37ed48f960e2d85b1c",
+    "excludeDomains": [
+        "univercours.com"
+    ],
+    "capping": {
+        "limit": 5,
+        "timeout": 24
+    },
+    "exitScript": {
+        "enabled": true
+    },
+    "popUnder": {
+        "enabled": true
+    }
+};
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = '//cdn.shorte.st/link-converter.min.js';
+    script.onload = script.onreadystatechange = function () {var rs = this.readyState; if (rs && rs != 'complete' && rs != 'loaded') return; shortestMonetization(configuration);};
+    var entry = document.getElementsByTagName('script')[0];
+    entry.parentNode.insertBefore(script, entry);
+})();
+//]]></script>
+
