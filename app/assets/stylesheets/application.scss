@@ -5849,9 +5849,8 @@ nav.small .minilogo {
 }
 
 .heading-agileinfo {
-   font-size: 18px;
+   font-size: 22px;
    color: #223d61 !important;
-   margin-top: 30px;
 }
 
 .heading-agileinfo2 {
@@ -5860,7 +5859,6 @@ nav.small .minilogo {
     padding: 5px;
     background: $blue;
     color: #fff;
-    margin: auto;
 }
 .navbar-brand {
     margin-bottom: 15px;
@@ -6209,14 +6207,14 @@ color: #fff;
 }
 #contact .contact-item span {
 	font-weight: 400;
-	color: #fff;
+	color: #333;
 	text-transform: uppercase;
 	margin-bottom: 6px;
 	display: inline-block;
 }
 /* Footer Section*/
 #footer {
-	background: #262626;
+	background: #fff;
 	padding: 40px 0 20px 0;
 }
 #footer .social {
@@ -6234,11 +6232,11 @@ color: #fff;
 	transition: all 0.3s;
 }
 #footer .social i.fa:hover {
-	color: #eee;
+	color: $blue;
 }
 #footer p {
 	font-size: 14px;
-	color: #666;
+	color: black;
 }
 #footer a {
 	color: #999;
@@ -11187,7 +11185,7 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
   left: 0;
 }
 
-#home h6 {
+#home h5 {
   color: #bfba55;
 }
 
@@ -11234,3 +11232,99 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked{
 .index-deust-name {
   color: $blue;
 }
+
+
+/*---------------------------------------
+   Footer section              
+-----------------------------------------*/
+
+footer {
+  background: #fff;
+  color: black;
+  padding: 80px 0px;
+  position: relative;
+}
+
+footer .col-md-4 .fa {
+color: #ffffff;
+padding-right: 8px;
+}
+
+footer hr {
+border-color: #121212;
+margin-top: 62px;
+margin-bottom: 42px;
+}
+
+footer .footer-copyright {
+padding-top: 12px;
+}
+
+
+
+/* Back top */
+.go-top {
+background-color: #ffffff;
+box-shadow: 1px 1.732px 12px 0px rgba( 0, 0, 0, .14 ), 1px 1.732px 3px 0px rgba( 0, 0, 0, .12 );
+transition : all 1s ease;
+bottom: 2em;
+right: 2em;
+color: #333;
+font-size: 24px;
+display: none;
+position: fixed;
+text-decoration: none;
+width: 40px;
+height: 40px;
+line-height: 38px;
+text-align: center;
+border-radius: 100%;
+}
+
+.go-top:hover {
+  background: #bfba55;
+  color: #ffffff;
+}
+
+
+
+/*---------------------------------------
+ Social icon             
+-----------------------------------------*/
+
+.social-icon {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.social-icon li {
+  display: inline-block;
+  list-style: none;
+}
+
+.social-icon li a {
+  border: 2px solid #292929;
+  color: #292929;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
+  margin: 22px 12px 10px 12px;
+}
+
+.social-icon li a:hover {
+  border-color: $blue;
+  color:$blue;
+  transform: scale(1.1);
+}
+
+

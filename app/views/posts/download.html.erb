@@ -37,7 +37,7 @@
 				</script>
 				</div>
 					<% if @post.download_link.presence %>
-					<%= link_to "Télecharger", "https://cutlinks.net/st?api=21ae135726823fd7a39a997b607fb5c0ed59297b&url=#{@post.download_link}", target: "_blank", class: "btn btn-md" %>
+					<%= link_to "Télecharger", @post.download_link, target: "_blank", class: "btn btn-md" %>
 					<% end %>
 					<div class="ad-frame">
 					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -83,24 +83,17 @@
 					<%= link_to "nouveau pdf", new_deust_matiere_post_pdf_path(@deust, @matiere, @post), class: "btn btn-md" %>
 					<%= link_to "nouveau image", new_deust_matiere_post_image_path(@deust, @matiere, @post), class: "btn btn-md" %>
 				<%	 end %>
+				<ul class="cart-list">
+				<% @post.matiere.semester.matieres.each do |matiere| %>
+					<li>
+						<a href="#" class="photo"><%= image_tag matiere.image.url(:thumb) %></a>
+						<h6><%= link_to matiere.name, deust_matiere_path(matiere.deust, matiere) %></h6>
+						</li>
+				<% end %>
+				</ul>
 			</div>
-			<% @post.deust.posts.last(10).each do |post| %>
-				<div class="col-md-12 col-sm-12 col-xs-12 gallery-grid mix <%= post.category.name.last(6) %>" style="padding: 0px 50px 0px 50px;">
-					<%= link_to deust_matiere_post_path(post.deust, post.matiere, post) do %>
-					<p style="margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-					<% end %>
-				</div>
-			<% end %>
+
 		</div>
     </div>
-	<% if @matiere.posts.count > 1 %>
-      	<h5 style="margin-top: 20px"><%= @post.matiere.name %></h5>
-		<% @matiere.posts.order("created_at DESC").each do |post| %>
-			<% if post.name != @post.name %>
-		        <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
-		            <p style="font-size: 20px; margin-top: 10px; margin-bottom: 10px"><%= post.name %></p>
-		        <% end %>
-		    <% end %>
-        <% end %>
-    <% end %>
+
 </div>

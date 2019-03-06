@@ -2,6 +2,17 @@
 <div class="container" style="padding-top: 80px;">
 	<div class="row">
 		<div class="col-md-8">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- text ad -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-7690261265789990"
+			 data-ad-slot="2631672705"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
 			<h5 class="heading-agileinfo1 text-left">
 			<%= link_to deust_path(@deust) do %>
 				<%= @post.deust.name %> 
@@ -21,8 +32,20 @@
 					<% end %>
 				</div>
 			</div>
+			
+			
 		</div>
 		<div class="col-md-4 text-center">
+		<!-- text / image responsive -->
+				<ins class="adsbygoogle"
+					style="display:block"
+					data-ad-client="ca-pub-7690261265789990"
+					data-ad-slot="1471753835"
+					data-ad-format="auto"
+					data-full-width-responsive="true"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
 			<div class="portfolio_btn_area text-center">
 				<%= link_to "retour", deust_matiere_path(@deust, @matiere), class: "btn btn-md" %>
 				<% if session[:user_id] %>
@@ -30,17 +53,14 @@
 					<%= link_to "nouveau image", new_deust_matiere_post_image_path(@deust, @matiere, @post), class: "btn btn-md" %>
 				<%	 end %>
 			</div>
-			<div class="ad-unit">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- index-vertical-banner -->
-                    <ins class="adsbygoogle"
-                        style="display:inline-block;width:300px;height:600px"
-                        data-ad-client="ca-pub-7690261265789990"
-                        data-ad-slot="1357867834"></ins>
-                    <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-            </div>
+			<ul class="cart-list">
+			<% @post.matiere.semester.matieres.each do |matiere| %>
+				<li>
+					<a href="#" class="photo"><%= image_tag matiere.image.url(:thumb) %></a>
+					<h6><%= link_to matiere.name, deust_matiere_path(matiere.deust, matiere) %></h6>
+					</li>
+			<% end %>
+			</ul>
 		</div>
     </div>
 </div>

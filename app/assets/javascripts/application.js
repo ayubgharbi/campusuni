@@ -722,7 +722,7 @@ jQuery(document).ready(function ($) {
 
 //    $('#menu').slicknav();
 
-    $('#mixcontent').mixItUp({
+    $('.mixcontent').mixItUp({
         animation: {
             animateResizeContainer: false,
             effects: 'fade rotateX(-45deg) translateY(-10%)'
