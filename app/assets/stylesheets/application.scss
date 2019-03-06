@@ -5999,8 +5999,8 @@ footer {
 .menu-btn{
 	position:fixed;
 	display:block;
-	top: 525px;
-	right:25px;
+	top: 15px;
+  right: 1169px;
 	text-decoration:none;
 	color:#FFF;
 	z-index:99;
@@ -6063,8 +6063,8 @@ body.show-menu .menu-btn > .lines > .l3{
 .menu{
 	position:fixed;
 	z-index:99;
-	top:525px;
-	right:91px;
+	top:30px;
+	right:891px;
 	background:#202020;
 	height:51px;
 	line-height:51px;
@@ -6077,13 +6077,13 @@ body.show-menu .menu-btn > .lines > .l3{
 	transform:translateY(-15px);
 	-webkit-transition:all .3s ease;
 	-moz-transition:all .3s ease;
-	transition:all .3s ease;
-	opacity:0;
-	visibility:hidden;
+  transition:all .3s ease;
+  visibility: visible;
+  opacity: 1;
 }
 body.show-menu .menu{
-	opacity:1;
-	visibility:visible;
+	opacity:0;
+	visibility:hidden;
 	-webkit-transform:translateY(0);
 	-moz-transform:translateY(0);
 	-ms-transform:translateY(0);
@@ -11335,5 +11335,7 @@ border-radius: 100%;
   color:$blue;
   transform: scale(1.1);
 }
+
+
 
 
