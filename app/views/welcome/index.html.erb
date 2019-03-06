@@ -61,30 +61,3 @@
 
 
 
-
-<div class="container" style="margin-top:70px;">
-    <div class="row">
-        <% Deust.all.each do |deust| %>
-            <% if deust.name != "Livres" %>
-            <h5 class="heading-agileinfo2"><%= deust.name %></h5>
-            <div class="row">
-                <% deust.semesters.each do |semester| %>
-                    <div class="col-md-3 col-sm-12">
-                    <% if semester.matieres.presence %>
-                    <h4 class="heading-agileinfo3"><%= semester.name %></h4>
-                    <% semester.matieres.each do |matiere| %>
-                        <ul class="cart-list" style="margin-bottom: 30px;">
-                                <li>
-                                    <a href="#" class="photo"><%= image_tag matiere.image.url(:thumb) %></a>
-                                    <h6><%= link_to matiere.name, deust_matiere_path(matiere.deust, matiere) %></h6>
-                                </li>
-                        </ul>
-                    <% end %>
-                    <% end %>
-                    </div>
-                <% end %>     
-            </div>
-            <% end %>
-        <% end %>
-    </div>
-</div>
