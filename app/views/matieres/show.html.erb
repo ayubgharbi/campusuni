@@ -33,7 +33,7 @@
                         <div class="row">
                             <% @matiere.posts.order("created_at DESC").each do |post| %>
                                 <div class="col-md-4 col-sm-4 col-xs-4">
-                                    <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
+                                    <%= link_to "http://sh.st/st/8b96b1790166de37ed48f960e2d85b1c/univercours.com#{deust_matiere_post_path(@deust, @matiere, post)}" do %>
                                         <div class="post-home gallery-grid mix <%= post.category.name.last(6) %>">
                                             <% if post.pdfs.presence %>
                                                 <iframe src=<%= post.pdfs.first.link %> width="210" height="240"></iframe>
