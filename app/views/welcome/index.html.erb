@@ -72,12 +72,10 @@
                     <h4 class="heading-agileinfo"><%= semester.name %></h4>
                     <% semester.matieres.each do |matiere| %>
                         <ul class="cart-list" style="margin-bottom: 30px;">
-                            <% matiere.semester.matieres.each do |matiere| %>
                                 <li>
                                     <a href="#" class="photo"><%= image_tag matiere.image.url(:thumb) %></a>
                                     <h6><%= link_to matiere.name, deust_matiere_path(matiere.deust, matiere) %></h6>
                                 </li>
-                            <% end %>
                         </ul>
                     <% end %>
                     </div>
