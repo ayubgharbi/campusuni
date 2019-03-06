@@ -65,6 +65,7 @@
 <div class="container" style="margin-top:70px;">
     <div class="row">
         <% Deust.all.each do |deust| %>
+            <% if deust.name != Livres %>
             <h5 class="heading-agileinfo2"><%= deust.name %></h5>
             <div class="row">
                 <% deust.semesters.each do |semester| %>
@@ -74,13 +75,14 @@
                         <ul class="cart-list" style="margin-bottom: 30px;">
                                 <li>
                                     <a href="#" class="photo"><%= image_tag matiere.image.url(:thumb) %></a>
-                                    <p style="color: black !important"><%= link_to matiere.name, deust_matiere_path(matiere.deust, matiere) %></p>
+                                    <h6><%= link_to matiere.name, deust_matiere_path(matiere.deust, matiere) %></h6>
                                 </li>
                         </ul>
                     <% end %>
                     </div>
                 <% end %>     
             </div>
+            <% end %>
         <% end %>
     </div>
 </div>
