@@ -32,15 +32,8 @@
 					<%= link_to "nouveau image", new_deust_matiere_post_image_path(@deust, @matiere, @post), class: "btn btn-md" %>
 				<%	 end %>
 			</div>
-			<ul class="cart-list">
-			<% @post.matiere.semester.matieres.each do |matiere| %>
-				<li>
-					<a href="#" class="photo"><%= image_tag matiere.image.url(:thumb) %></a>
-					<h6><%= link_to matiere.name, deust_matiere_path(matiere.deust, matiere) %></h6>
-					</li>
-			<% end %>
-			</ul>
-			<div class="ad-unit">
+			
+				<div class="ad-unit">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- index-vertical-banner -->
                     <ins class="adsbygoogle"
@@ -50,7 +43,16 @@
                     <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
-                </div>
+				</div>
+			
+				<ul class="cart-list">
+				<% @post.matiere.semester.matieres.each do |matiere| %>
+					<li>
+						<a href="#" class="photo"><%= image_tag matiere.image.url(:thumb) %></a>
+						<h6><%= link_to matiere.name, deust_matiere_path(matiere.deust, matiere) %></h6>
+						</li>
+				<% end %>
+				</ul>
 		</div>
     </div>
 </div>
