@@ -21,6 +21,22 @@
 					<% end %>
 				</div>
 			</div>
+			<h5><%= @matiere.name %> </h5>
+			<div class="side2">
+                                    
+                                        <div class="widget">
+											<ul class="link">
+											
+											<% @matiere.posts.all.each do |post| %>
+												<% if post != @post %>
+                                                <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
+                                                        <li><%= link_to post.name, deust_matiere_post_path(@deust, @matiere, post) %></li>
+												<% end %>
+												<% end %>
+                                            <% end %>
+                                            </ul>
+                                        </div>
+                                </div>
 			
 			
 		</div>
