@@ -21,22 +21,37 @@
 					<% end %>
 				</div>
 			</div>
-			<h5 style="margin-top: 25px"><%= @matiere.name %> </h5>
-			<div class="side2">
-                                    
+			
+			<div id="lab">
+				<h5 style="margin-top: 25px"><%= @matiere.name %> </h5>
+                <div class="main_mix_menu">
+                    <ul>
+                        <li class="btn btn-primary filter" data-filter="all" style="border-radius: 0px;">tous</li>
+                        <% @categories.each do |category| %>
+                            <% if category.posts.where(matiere_id: @matiere.id).presence %>
+                                <li data-filter=".<%= category.name.last(6) %>" class="btn btn-primary filter" style="border-radius: 0px;"><%= category.name %></li>
+                            <% end %>
+                        <% end %> 
+                     </ul>
+                </div>
+                <div id="mixcontent" class="mixcontent">
+                        <div class="row">
+                                <div class="side1">         
                                         <div class="widget">
-											<ul class="link">
-											
-											<% @matiere.posts.all.each do |post| %>
-												<% if post != @post %>
+                                            <ul class="link">
+                                            <% @matiere.posts.all.each do |post| %>
                                                 <%= link_to deust_matiere_post_path(@deust, @matiere, post) do %>
+                                                    <div class="mix <%= post.category.name.last(6) %>">
                                                         <li><%= link_to post.name, deust_matiere_post_path(@deust, @matiere, post) %></li>
-												<% end %>
-												<% end %>
+                                                    </div>
+                                                <% end %>
                                             <% end %>
                                             </ul>
                                         </div>
-                                </div>
+                                </div>       
+                        </div>
+                </div>
+            </div>  
 			
 			
 		</div>

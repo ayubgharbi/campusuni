@@ -12,7 +12,8 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:name])
   end
 
-  def show 
+  def show
+    @categories = Category.all 
   end 
   
   def new
