@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  #devise_for :admin_users, ActiveAdmin::Devise.config
- # devise_for :admins
+
   get 'welcome/index'
   get 'about/index'
   get 'contact/index'

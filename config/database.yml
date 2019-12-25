@@ -1,24 +1,15 @@
 default: &default
-  adapter: sqlite3
+  adapter: postgresql
+  encoding: unicode
   pool: 5
-  host: localhost
-  username: univercours
-  password: univercours
-  timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
-
-test:
-  <<: *default
-  database: db/test.sqlite3
+  database: univercours_development
+  username: deploy
 
 production:
   adapter: postgresql
-  host: localhost
   encoding: unicode
-  database: universcours_production
   pool: 5
-  username: univercours
-  password: univercours
+  url: <%= ENV['DATABASE_URL'] %>

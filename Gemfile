@@ -22,20 +22,24 @@ gem 'i18n', '~> 0.7.0'
 gem 'paperclip', '~> 5.1'
 gem 'font-awesome-sass'
 gem 'prettyphoto-rails'
-gem 'activeadmin', git: 'git://github.com/gregbell/active_admin.git'
 gem 'devise', '~> 4.1', '>= 4.1.1'
-gem 'arctic_admin', github: 'cle61/arctic_admin', branch: '2-0-alpha'
 gem 'bcrypt', '~> 3.1.7'
 gem 'friendly_id', '~> 5.1'
 gem 'social-share-button'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'particles-js-rails', '~> 2.0'
 
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
 
 group :development do
+  gem 'capistrano', '~> 3.11'
+  gem 'capistrano-rails', '~> 1.4'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+  gem 'capistrano-postgresql', '~> 6.2'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
@@ -43,6 +47,11 @@ group :development do
 end
 
 group :production do
+  gem 'capistrano', '~> 3.11'
+  gem 'capistrano-rails', '~> 1.4'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+  gem 'capistrano-postgresql', '~> 6.2'
   gem 'pg', '~> 0.20'
 end
 
